@@ -30,8 +30,8 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 ```
 /self-help-hub
 │── index.html        # Main webpage
-│── styles.css        # Styling (if separated)
+│── styles.css        # Styling
 │── script.js         # JavaScript functionality
-│── images/           # Folder for rotating background images
+│── assets/           # Folder for txt files and rotating background images 
 │── README.md         # This file
 ```
