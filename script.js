@@ -18,6 +18,10 @@ topics.forEach((topic, index) => {
     button.innerText = topic;
     button.style.left = `${x}px`;
     button.style.top = `${y}px`;
+
+    // Counteract the rotation effect
+    button.style.transform = `translate(-50%, -50%) rotate(${angle + 90}rad)`;
+
     button.onclick = () => alert(`Redirecting to ${topic} page...`);
     container.appendChild(button);
 });

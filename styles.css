@@ -34,27 +34,38 @@ body {
     }
 }
 
-/* Main container */
 .container {
-    position: relative;
-    text-align: center;
-    color: white;
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 h1 {
-    font-size: 2em;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-/* Circular button layout */
-.circle {
+/* Rotation logic */
+.circle-wrapper {
     position: relative;
     width: 300px;
     height: 300px;
-    margin: auto;
+    animation: rotateCircle 20s linear infinite;
 }
 
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 .circle button {
     position: absolute;
@@ -67,4 +78,9 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     transform: translate(-50%, -50%);
+}
+
+/* Prevent buttons from rotating themselves */
+.circle button {
+    transform-origin: center;
 }
