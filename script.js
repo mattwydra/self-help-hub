@@ -24,7 +24,7 @@ topics.forEach((topic, index) => {
 
     button.onclick = () => {
         const directoryName = topic.toLowerCase().replace(/\s+/g, "_"); // Convert to lowercase and replace spaces with dashes
-        window.location.href = `${directoryName}/index.html`;
+        window.location.href = `endpoints/${directoryName}/index.html`;
         // window.location.href = `https://mattwydra.github.io/self-help-hub/${directoryName}/index.html`;
     };
 
