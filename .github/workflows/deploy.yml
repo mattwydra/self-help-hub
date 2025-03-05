@@ -23,4 +23,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages  # Deploy to the 'gh-pages' branch
-          folder: / # Root directory
+          folder: website # Root directory
