@@ -22,6 +22,10 @@ topics.forEach((topic, index) => {
     // Counteract the rotation effect
     button.style.transform = `translate(-50%, -50%) rotate(${angle + 90}rad)`;
 
-    button.onclick = () => alert(`Redirecting to ${topic} page...`);
+    button.onclick = () => {
+        const directoryName = topic.toLowerCase().replace(/\s+/g, "_"); // Convert to lowercase and replace spaces with dashes
+        window.location.href = `./${directoryName}/index.html`;
+    };
+
     container.appendChild(button);
 });
