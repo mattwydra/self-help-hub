@@ -1,3 +1,109 @@
-<h1>This page will eventually help you when you're feeling unmotivated</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unmotivated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        #question-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #progress {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="question-container">
+        <h2 id="question">Loading...</h2>
+        <textarea id="answer" placeholder="Type your answer here..."></textarea>
+        <button onclick="nextQuestion()">Next</button>
+        <p id="progress"></p>
+        <button onclick="downloadResponses()" style="display:none;">Download Responses</button>
+    </div>
+
+    <script>
+        const questions = [
+            "What does love mean to me? How has my definition changed over time?",
+            "If I had to bet on myself, what are the odds that I’d succeed? What would I need to change to make those odds 100%?",
+            "What’s a moment in my past that I never want to forget? Why was it so impactful?",
+            "What do I want out of life?"
+        ];
+        let currentQuestion = 0;
+        let responses = [];
+
+        function loadQuestion() {
+            document.getElementById("question").textContent = questions[currentQuestion];
+            document.getElementById("progress").textContent = `Question ${currentQuestion + 1} of ${questions.length}`;
+            document.getElementById("answer").value = responses[currentQuestion] || "";
+        }
+
+        function nextQuestion() {
+            responses[currentQuestion] = document.getElementById("answer").value;
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showSummary();
+            }
+        }
+
+        function showSummary() {
+            let container = document.getElementById("question-container");
+            container.innerHTML = "<h2>Your Responses</h2>";
+            questions.forEach((q, index) => {
+                container.innerHTML += `<p><strong>${q}</strong></p><p>${responses[index]}</p>`;
+            });
+            let downloadBtn = document.createElement("button");
+            downloadBtn.textContent = "Download Responses";
+            downloadBtn.onclick = downloadResponses;
+            container.appendChild(downloadBtn);
+        }
+
+        function downloadResponses() {
+            let text = questions.map((q, i) => `${q}\n${responses[i]}\n`).join("\n");
+            let blob = new Blob([text], { type: "text/plain" });
+            let link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "responses.txt";
+            link.click();
+        }
+
+        loadQuestion();
+    </script>
+</body>
+
+</html>
