@@ -1,3 +1,27 @@
-<h1>This page will eventually help you when you're feeling angry</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANGER Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>ANGER</h1>
+        <p>How do you want to use your anger?</p>
+        <div class="button-group">
+            <button onclick="loadAngerMode('summon')">Summon It</button>
+            <button onclick="loadAngerMode('use')">Use It</button>
+            <button onclick="loadAngerMode('calm')">Calm It</button>
+        </div>
+        <div id="anger-content" class="content-box"></div>
+        <button id="change-mode" onclick="resetMode()">Change Mode</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
