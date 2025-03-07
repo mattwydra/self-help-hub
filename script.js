@@ -1,6 +1,6 @@
 const topics = [
     "Anger", "Heartbreak", "Love", "Parents", "Unmotivated", "Depressed", "Meditation",
-    "Egoism", "Strength", "Lost", "Overthinking", "Loneliness", "Regret",
+    "Egoism", "Strength", "Lost", "Overthinking", "Loneliness", "Regret", "Goal Setting",
     "Failure", "Social Anxiety", "Boredom", "Gratitude", "Revenge", "Anxiety"
 ];
 
