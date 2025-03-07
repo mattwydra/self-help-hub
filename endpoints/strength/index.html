@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,17 +13,20 @@
             color: white;
             padding: 20px;
         }
+
         .character-container {
             margin: 20px auto;
             width: 80%;
             max-width: 500px;
         }
+
         .character {
             margin: 10px 0;
             padding: 10px;
             background: #333;
             border-radius: 5px;
         }
+
         .info {
             display: none;
             margin-top: 10px;
@@ -30,6 +34,7 @@
             padding: 10px;
             border-radius: 5px;
         }
+
         button {
             background-color: #444;
             color: white;
@@ -38,25 +43,35 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         button:hover {
             background-color: #666;
         }
     </style>
 </head>
+
 <body>
     <h1>Strength</h1>
     <div class="character-container">
         <div class="character">
             <button onclick="toggleInfo('guts')">Guts</button>
-            <div id="guts" class="info">Guts is a warrior driven by sheer willpower and perseverance, overcoming impossible odds.</div>
+            <div id="guts" class="info">Guts is a warrior driven by sheer willpower and perseverance, overcoming
+                impossible odds.</div>
         </div>
         <div class="character">
             <button onclick="toggleInfo('goblin')">Goblin Slayer</button>
-            <div id="goblin" class="info">Goblin Slayer is methodical and relentless, proving that preparation and discipline lead to victory.</div>
+            <div id="goblin" class="info">Goblin Slayer is methodical and relentless, proving that preparation and
+                discipline lead to victory.</div>
         </div>
         <div class="character">
             <button onclick="toggleInfo('thorfinn')">Thorfinn</button>
-            <div id="thorfinn" class="info">Thorfinn’s journey is about finding strength through purpose and overcoming hatred.</div>
+            <div id="thorfinn" class="info">Thorfinn’s journey is about finding strength through purpose and overcoming
+                hatred.</div>
+        </div>
+        <div class="character">
+            <button onclick="toggleInfo('thorfinn')">Asta</button>
+            <div id="thorfinn" class="info">Asta is a character that by all means shouldn't amount to anything. But he
+                doesn't let his lack of innate ability stop him.</div>
         </div>
     </div>
     <script>
@@ -66,4 +81,5 @@
         }
     </script>
 </body>
+
 </html>
