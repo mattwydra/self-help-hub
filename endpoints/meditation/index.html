@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation Techniques</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .method {
+            display: none;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 60%;
+            background-color: #0f3460;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            background-color: #e94560;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Select a Meditation Method</h1>
+    <button onclick="showMethod(1)">Focus on the Flame</button>
+    <button onclick="showMethod(2)">Focus on a Grandfather Clock</button>
+    <button onclick="showMethod(3)">Focus on Breathing</button>
+    <button onclick="showMethod(4)">Box Breathing</button>
+    <button onclick="showMethod(5)">Fog Island Visualization</button>
+
+    <div id="method1" class="method">
+        <h2>Focus on the Flame</h2>
+        <p>Light a candle and watch the flame. Observe its movements and let your thoughts settle.</p>
+    </div>
+    <div id="method2" class="method">
+        <h2>Focus on a Grandfather Clock</h2>
+        <p>Imagine the steady ticking of a clock. Let the rhythmic sound ground you in the present.</p>
+    </div>
+    <div id="method3" class="method">
+        <h2>Focus on Breathing</h2>
+        <p>Close your eyes and take slow, deep breaths. Feel the air enter and leave your lungs.</p>
+    </div>
+    <div id="method4" class="method">
+        <h2>Box Breathing</h2>
+        <p>Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds, and repeat.</p>
+    </div>
+    <div id="method5" class="method">
+        <h2>Fog Island Visualization</h2>
+        <p>Imagine yourself on an island surrounded by fog. Breathe in, and the fog moves in. Breathe out, and the fog
+            recedes.</p>
+    </div>
+
+    <script>
+        function showMethod(num) {
+            document.querySelectorAll('.method').forEach(el => el.style.display = 'none');
+            document.getElementById('method' + num).style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
