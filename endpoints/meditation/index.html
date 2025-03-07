@@ -5,36 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meditation Techniques</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #1a1a2e;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .method {
-            display: none;
-            padding: 20px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: 60%;
-            background-color: #0f3460;
-        }
-
-        button {
-            margin: 10px;
-            padding: 10px;
-            background-color: #e94560;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -67,12 +39,6 @@
             recedes.</p>
     </div>
 
-    <script>
-        function showMethod(num) {
-            document.querySelectorAll('.method').forEach(el => el.style.display = 'none');
-            document.getElementById('method' + num).style.display = 'block';
-        }
-    </script>
 </body>
 
 </html>
