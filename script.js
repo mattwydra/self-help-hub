@@ -5,7 +5,7 @@ const topics = [
 ];
 
 const container = document.getElementById("buttonContainer");
-const radius = 350; // Radius for the circular layout
+const radius = 400; // Radius for the circular layout
 const centerX = 150;
 const centerY = 150;
 
