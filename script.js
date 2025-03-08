@@ -1,7 +1,7 @@
 const topics = [
     "Anger", "Heartbreak", "Love", "Parents", "Unmotivated", "Depressed", "Meditation",
     "Egoism", "Strength", "Lost", "Overthinking", "Loneliness", "Regret", "Goal Setting",
-    "Failure", "Social Anxiety", "Boredom", "Gratitude", "Revenge", "Anxiety"
+    "Failure", "Social Anxiety", "Boredom", "Gratitude", "Revenge", "Anxiety", "Sleep"
 ];
 
 const container = document.getElementById("buttonContainer");
