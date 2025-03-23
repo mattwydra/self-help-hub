@@ -35,3 +35,20 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 │── assets/           # Folder for txt files and rotating background images 
 │── README.md         # This file
 ```
+
+## Features in progress right now:
+
+
+### Social Anxiety
+
+1. **Quick Self-Talk Phrases:**
+   - "I've handled difficult conversations before and survived."
+   - "People are usually focused on themselves, not judging me."
+   - "I don't need to be perfect to be accepted."
+   - "This feeling will pass - it always does."
+
+2. **Breathing Technique:** 
+   The 4-7-8 Method: Inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds. This activates the parasympathetic nervous system and can help reduce anxiety quickly.
+
+3. **Outside-the-Box Activity:**
+   "Social Anxiety Soundtrack" - Create a playlist of your favorite upbeat songs. Before entering anxiety-provoking situations, listen to one song while striking power poses (hands on hips, standing tall). This combines music therapy with physical posture change to boost confidence through both auditory and proprioceptive channels.
