@@ -72,3 +72,14 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 3. **Micro-Connection Challenge:**
    Suggest making one tiny human connection each day - smile at a cashier, comment on a social media post meaningfully, send a quick message to an old friend with no pressure for response. Frame it as building "connection muscle" gradually.
 
+### Depression
+
+1. **Small Wins Tracker:**
+   Create a visually rewarding digital tracker where users can log tiny wins each day. The interface should celebrate even minimal efforts (brushed teeth, opened curtains, drank water) with gentle positive reinforcement.
+
+2. **5-Minute Sunlight Timer:**
+   A simple timer that encourages just 5 minutes of exposure to natural light. Explain how this impacts circadian rhythm and mood, while emphasizing that it's an achievable goal even on the hardest days.
+
+3. **"Just This" Mindfulness:**
+   A guided exercise focused on completing just one small task with full presence. Instead of thinking about everything that needs doing, the activity guides users to focus completely on the sensory experience of one simple action like washing a single dish or folding one piece of clothing.
+
