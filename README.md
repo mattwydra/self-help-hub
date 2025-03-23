@@ -100,3 +100,15 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 **For those who need to embrace it more:**
 - "Evidence Collection" - Structured exercise to document personal achievements and positive qualities, with prompts to overcome dismissing their significance.
 - "Boundaries Visualization" - Interactive tool to help users visualize and articulate their needs and boundaries in different contexts.
+
+### Failure 
+
+1. **Failure Reframing Exercise**: Have users write about a recent failure, then guide them through reframing it as a learning opportunity with specific prompts.
+
+2. **Famous Failure Stories**: Share brief stories of well-known people who faced significant failures before success, with reflection questions.
+
+3. **Failure Portfolio**: Have users create a "portfolio" of their failures and what they learned from each one, emphasizing growth.
+
+4. **Fear-to-Growth Ladder**: An interactive exercise where users identify a fear of failure, then create small, increasingly challenging steps to overcome it.
+
+5. **Failure Visualization**: Guide users through visualizing "failing forward" in a situation they're anxious about.
