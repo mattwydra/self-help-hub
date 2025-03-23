@@ -39,7 +39,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 ## Features in progress right now:
 
 
-### Social Anxiety
+### [Social Anxiety](endpoints/social_anxiety/index.html)
 
 1. **Quick Self-Talk Phrases:**
    - "I've handled difficult conversations before and survived."
