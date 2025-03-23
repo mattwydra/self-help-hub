@@ -91,3 +91,12 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 2. **Create-Don't-Consume Challenge:**
    Simple prompts for quick creative activities that take under 5 minutes but shift the user from passive consumption to active creation.
 
+### Egoism
+
+**For those who need to tone it down:**
+- "Perspective Shift" - Interactive scenario where users read a situation, write their reaction, then are prompted to rewrite it from three different perspectives.
+- "Silent Impact Journal" - Prompts to record moments when someone helped them without seeking recognition.
+
+**For those who need to embrace it more:**
+- "Evidence Collection" - Structured exercise to document personal achievements and positive qualities, with prompts to overcome dismissing their significance.
+- "Boundaries Visualization" - Interactive tool to help users visualize and articulate their needs and boundaries in different contexts.
