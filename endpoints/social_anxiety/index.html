@@ -1,3 +1,227 @@
-<h1>This page will eventually help you with social anxiety</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Anxiety Support</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f7f9fc;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #3498db;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .breathing-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #3498db;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+        }
+
+        .breathing-text {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        .playlist-container {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 15px;
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Animation classes */
+        .inhale {
+            transform: scale(1.5);
+            background-color: #2ecc71;
+        }
+
+        .hold {
+            background-color: #f1c40f;
+        }
+
+        .exhale {
+            transform: scale(1);
+            background-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Social Anxiety Support</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Helpful Self-Talk Phrases</h2>
+            <p>When anxiety rises, try repeating these to yourself:</p>
+            <ul>
+                <li>"I've handled difficult conversations before and survived."</li>
+                <li>"People are usually focused on themselves, not judging me."</li>
+                <li>"I don't need to be perfect to be accepted."</li>
+                <li>"This feeling will pass - it always does."</li>
+                <li>"My worth isn't determined by one interaction."</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4-7-8 Breathing Technique</h2>
+            <p>This powerful breathing method activates your parasympathetic nervous system and helps reduce anxiety
+                quickly:</p>
+            <div class="breathing-container">
+                <div id="breathingCircle" class="circle">Breathe</div>
+                <p id="breathingInstructions" class="breathing-text">Click the circle to begin</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Social Anxiety Soundtrack</h2>
+            <p>Create a confidence-boosting ritual before social situations:</p>
+            <div class="playlist-container">
+                <ol>
+                    <li>Create a playlist of your favorite upbeat, confidence-boosting songs.</li>
+                    <li>Before entering an anxiety-provoking situation, find a private space.</li>
+                    <li>Play one song while striking "power poses" (hands on hips, standing tall with shoulders back).
+                    </li>
+                    <li>As you listen, imagine yourself handling the upcoming situation with ease.</li>
+                </ol>
+                <p><strong>Why this works:</strong> This combines music therapy with physical posture change to boost
+                    confidence through both auditory and proprioceptive channels. Research shows that changing your
+                    physical posture can actually shift your emotional state.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="#" class="home-button">Return to Hub</a>
+
+    <script>
+        const breathingCircle = document.getElementById('breathingCircle');
+        const breathingInstructions = document.getElementById('breathingInstructions');
+        let isBreathingActive = false;
+        let breathingPhase = 0;
+        let intervalId;
+
+        breathingCircle.addEventListener('click', () => {
+            if (isBreathingActive) {
+                clearInterval(intervalId);
+                breathingCircle.textContent = 'Breathe';
+                breathingCircle.className = 'circle';
+                breathingInstructions.textContent = 'Click the circle to begin';
+                isBreathingActive = false;
+            } else {
+                startBreathing();
+            }
+        });
+
+        function startBreathing() {
+            isBreathingActive = true;
+            breathingPhase = 0;
+            updateBreathingUI();
+
+            intervalId = setInterval(() => {
+                breathingPhase = (breathingPhase + 1) % 3;
+                updateBreathingUI();
+            }, [4000, 7000, 8000][breathingPhase]);
+        }
+
+        function updateBreathingUI() {
+            breathingCircle.className = 'circle';
+
+            switch (breathingPhase) {
+                case 0:
+                    breathingCircle.textContent = 'Inhale';
+                    breathingCircle.classList.add('inhale');
+                    breathingInstructions.textContent = 'Inhale for 4 seconds';
+                    setTimeout(() => {
+                        breathingPhase = (breathingPhase + 1) % 3;
+                        updateBreathingUI();
+                    }, 4000);
+                    break;
+                case 1:
+                    breathingCircle.textContent = 'Hold';
+                    breathingCircle.classList.add('hold');
+                    breathingInstructions.textContent = 'Hold for 7 seconds';
+                    setTimeout(() => {
+                        breathingPhase = (breathingPhase + 1) % 3;
+                        updateBreathingUI();
+                    }, 7000);
+                    break;
+                case 2:
+                    breathingCircle.textContent = 'Exhale';
+                    breathingCircle.classList.add('exhale');
+                    breathingInstructions.textContent = 'Exhale for 8 seconds';
+                    setTimeout(() => {
+                        breathingPhase = (breathingPhase + 1) % 3;
+                        updateBreathingUI();
+                    }, 8000);
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
