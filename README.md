@@ -52,3 +52,12 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 
 3. **Outside-the-Box Activity:**
    "Social Anxiety Soundtrack" - Create a playlist of your favorite upbeat songs. Before entering anxiety-provoking situations, listen to one song while striking power poses (hands on hips, standing tall). This combines music therapy with physical posture change to boost confidence through both auditory and proprioceptive channels.
+
+### Heartbreak
+
+1. **Future Orientation Activity:**
+   "The Empty Canvas" - Provide a digital canvas where users can add symbolic images representing things they want in their future. Start with a completely blank canvas and prompt them to add elements one by one (career goals, hobbies, places to visit, new experiences). This visually demonstrates that their future is unwritten and full of possibilities not dependent on their past relationship.
+
+2. **Identity Reclamation:**
+   "Who Was I Before?" exercise - Guide users to list activities, preferences, and parts of themselves they had before the relationship or that got diminished during it. Create a concrete action plan to reclaim one small element each day.
+
