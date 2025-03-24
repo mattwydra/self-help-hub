@@ -23,3 +23,6 @@
    - Save and print functionality
    - Responsive design that works on various screen sizes
    - Text areas for goal descriptions and importance reflection
+
+## Future Enhancements
+ - Better print functionality (turn all answers into a tree or some other format thats easy to look at)
