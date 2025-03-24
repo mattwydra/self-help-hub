@@ -75,6 +75,7 @@ The application embraces a minimalist, approachable design that prioritizes ease
 ## Future Enhancements
 
 Potential areas for expansion:
+- Fix breathing button functionality
 - Save functionality for personalized affirmations
 - Additional breathing pattern options
 - Expanded cognitive reframing exercises
