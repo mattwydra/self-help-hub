@@ -1,3 +1,666 @@
-<h1>This page will eventually help you to set worthwhile goals</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Setting Tree</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .help-link:hover {
+            text-decoration: underline;
+        }
+
+        .goal-section {
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 20px;
+        }
+
+        .goal-tree {
+            display: none;
+        }
+
+        .goal-item {
+            margin: 15px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .goal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .goal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .sub-goals {
+            margin-left: 30px;
+            padding-top: 10px;
+            border-left: 2px dashed #bdc3c7;
+            padding-left: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .remove-btn {
+            background-color: #e74c3c;
+            margin-left: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 10% auto;
+            padding: 30px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        #helpContent h2 {
+            color: #3498db;
+            margin-top: 30px;
+        }
+
+        .question-section {
+            margin: 25px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .question-section h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        .save-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #saveBtn {
+            background-color: #27ae60;
+            padding: 12px 25px;
+            font-size: 16px;
+        }
+
+        #saveBtn:hover {
+            background-color: #219653;
+        }
+
+        #printBtn {
+            background-color: #9b59b6;
+            padding: 12px 25px;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+
+        #printBtn:hover {
+            background-color: #8e44ad;
+        }
+
+        @media print {
+
+            button,
+            .help-link,
+            .no-print {
+                display: none !important;
+            }
+
+            .goal-tree,
+            .sub-goals {
+                display: block !important;
+            }
+
+            body {
+                background-color: white;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Goal Setting Journey</h1>
+        <p>Create a structured path from your long-term vision to daily actions</p>
+    </header>
+
+    <div class="container">
+        <a href="#" class="help-link" id="helpLink">Not sure how to set goals? Click here for guidance</a>
+
+        <div class="goal-section">
+            <h2>Your 3-Year Vision</h2>
+            <p>What major achievements would you like to accomplish in the next 3 years?</p>
+
+            <div id="threeYearGoals">
+                <div class="goal-item">
+                    <div class="goal-header">
+                        <div class="goal-title">3-Year Goal #1</div>
+                        <div>
+                            <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                            <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                        </div>
+                    </div>
+                    <input type="text" placeholder="Enter your 3-year goal here" class="goal-input">
+                    <textarea placeholder="Why is this goal important to you? What would achieving it mean?"></textarea>
+
+                    <div class="goal-tree">
+                        <div class="sub-goals yearly-goals">
+                            <h3>1-Year Milestones</h3>
+                            <p>Break down your 3-year goal into yearly achievements:</p>
+
+                            <div class="goal-item">
+                                <div class="goal-header">
+                                    <div class="goal-title">Year 1</div>
+                                    <div>
+                                        <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                                        <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                                    </div>
+                                </div>
+                                <input type="text" placeholder="What should you accomplish in the first year?">
+
+                                <div class="goal-tree">
+                                    <div class="sub-goals quarterly-goals">
+                                        <h4>Quarterly Goals</h4>
+
+                                        <div class="goal-item">
+                                            <div class="goal-header">
+                                                <div class="goal-title">Q1</div>
+                                                <div>
+                                                    <button class="expand-btn"
+                                                        onclick="toggleSubGoals(this)">Expand</button>
+                                                    <button class="remove-btn"
+                                                        onclick="removeGoal(this)">Remove</button>
+                                                </div>
+                                            </div>
+                                            <input type="text"
+                                                placeholder="What will you accomplish in the first quarter?">
+
+                                            <div class="goal-tree">
+                                                <div class="sub-goals monthly-goals">
+                                                    <h5>Monthly Goals</h5>
+
+                                                    <div class="goal-item">
+                                                        <div class="goal-header">
+                                                            <div class="goal-title">Month 1</div>
+                                                            <button class="remove-btn"
+                                                                onclick="removeGoal(this)">Remove</button>
+                                                        </div>
+                                                        <input type="text"
+                                                            placeholder="What will you accomplish in the first month?">
+                                                        <textarea
+                                                            placeholder="What weekly/daily actions will you take to achieve this?"></textarea>
+                                                    </div>
+
+                                                    <button onclick="addMonthlyGoal(this)">+ Add Another Month</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button onclick="addQuarterlyGoal(this)">+ Add Another Quarter</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button onclick="addYearlyGoal(this)">+ Add Another Year</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="addThreeYearGoal">+ Add Another 3-Year Goal</button>
+        </div>
+
+        <div class="save-section">
+            <button id="saveBtn">Save Goals</button>
+            <button id="printBtn">Print Goals</button>
+        </div>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="helpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="helpContent">
+                <h2>Finding Your Direction: Goal Setting Guide</h2>
+                <p>Goal setting is a skill that takes practice. If you're not sure where to start, this guide can help
+                    you discover meaningful goals aligned with your purpose.</p>
+
+                <div class="question-section">
+                    <h3>1. Discovering Your Natural Talents</h3>
+                    <p>According to Robert Greene in "Mastery," we all have natural inclinations that point toward our
+                        life's work.</p>
+                    <p><strong>Reflect on these questions:</strong></p>
+                    <ul>
+                        <li>What activities did you enjoy as a child, before external pressures influenced you?</li>
+                        <li>What tasks or subjects do you find yourself naturally drawn to?</li>
+                        <li>When do you experience "flow" - where time seems to disappear?</li>
+                        <li>What work would you do even if you weren't paid for it?</li>
+                    </ul>
+                </div>
+
+                <div class="question-section">
+                    <h3>2. Identifying Your Values</h3>
+                    <p>Goals aligned with your core values are more likely to motivate you.</p>
+                    <p><strong>Ask yourself:</strong></p>
+                    <ul>
+                        <li>What principles are non-negotiable in your life?</li>
+                        <li>When have you felt most proud of yourself?</li>
+                        <li>What would you want people to say about you at your 80th birthday celebration?</li>
+                        <li>What issues or causes move you emotionally?</li>
+                    </ul>
+                </div>
+
+                <div class="question-section">
+                    <h3>3. Finding Your Ideal Future</h3>
+                    <p>Visualization helps uncover meaningful goals.</p>
+                    <p><strong>Imagine:</strong></p>
+                    <ul>
+                        <li>If you had unlimited resources and couldn't fail, what would you do?</li>
+                        <li>What does your ideal day look like 3 years from now?</li>
+                        <li>What achievements would make you feel fulfilled?</li>
+                        <li>What skills or knowledge would you love to master?</li>
+                    </ul>
+                </div>
+
+                <div class="question-section">
+                    <h3>4. The "Apprenticeship Path" (from Mastery)</h3>
+                    <p>Robert Greene suggests that mastery comes from a deep learning phase followed by creative
+                        innovation.</p>
+                    <p><strong>Consider:</strong></p>
+                    <ul>
+                        <li>What field or domain feels like it could be your "life's task"?</li>
+                        <li>Who could be your mentors in this area?</li>
+                        <li>What skills would you need to develop over the next 3 years?</li>
+                        <li>How could you add your unique perspective to this field?</li>
+                    </ul>
+                </div>
+
+                <p><strong>Start with one area</strong> that resonates most strongly with you. It's better to deeply
+                    pursue one meaningful goal than to spread yourself thin across many.</p>
+
+                <button onclick="closeHelpModal()">Return to Goal Setting</button>
+            </div>
+        </div>
+    </div>
+
+    <a href="../../index.html" class="home-button">Return to Hub</a>
+
+    <script>
+        // Toggle sub-goals visibility
+        function toggleSubGoals(button) {
+            const goalItem = button.closest('.goal-item');
+            const goalTree = goalItem.querySelector('.goal-tree');
+
+            if (goalTree.style.display === 'block') {
+                goalTree.style.display = 'none';
+                button.textContent = 'Expand';
+            } else {
+                goalTree.style.display = 'block';
+                button.textContent = 'Collapse';
+            }
+        }
+
+        // Remove a goal
+        function removeGoal(button) {
+            if (confirm('Are you sure you want to remove this goal?')) {
+                const goalItem = button.closest('.goal-item');
+                goalItem.remove();
+            }
+        }
+
+        // Add 3-year goal
+        document.getElementById('addThreeYearGoal').addEventListener('click', function () {
+            const threeYearGoals = document.getElementById('threeYearGoals');
+            const goalCount = threeYearGoals.children.length + 1;
+
+            const newGoal = document.createElement('div');
+            newGoal.className = 'goal-item';
+            newGoal.innerHTML = `
+                <div class="goal-header">
+                    <div class="goal-title">3-Year Goal #${goalCount}</div>
+                    <div>
+                        <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                        <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                    </div>
+                </div>
+                <input type="text" placeholder="Enter your 3-year goal here" class="goal-input">
+                <textarea placeholder="Why is this goal important to you? What would achieving it mean?"></textarea>
+                
+                <div class="goal-tree">
+                    <div class="sub-goals yearly-goals">
+                        <h3>1-Year Milestones</h3>
+                        <p>Break down your 3-year goal into yearly achievements:</p>
+                        
+                        <div class="goal-item">
+                            <div class="goal-header">
+                                <div class="goal-title">Year 1</div>
+                                <div>
+                                    <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                                    <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="What should you accomplish in the first year?">
+                            
+                            <div class="goal-tree">
+                                <div class="sub-goals quarterly-goals">
+                                    <h4>Quarterly Goals</h4>
+                                    
+                                    <div class="goal-item">
+                                        <div class="goal-header">
+                                            <div class="goal-title">Q1</div>
+                                            <div>
+                                                <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                                                <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                                            </div>
+                                        </div>
+                                        <input type="text" placeholder="What will you accomplish in the first quarter?">
+                                        
+                                        <div class="goal-tree">
+                                            <div class="sub-goals monthly-goals">
+                                                <h5>Monthly Goals</h5>
+                                                
+                                                <div class="goal-item">
+                                                    <div class="goal-header">
+                                                        <div class="goal-title">Month 1</div>
+                                                        <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                                                    </div>
+                                                    <input type="text" placeholder="What will you accomplish in the first month?">
+                                                    <textarea placeholder="What weekly/daily actions will you take to achieve this?"></textarea>
+                                                </div>
+                                                
+                                                <button onclick="addMonthlyGoal(this)">+ Add Another Month</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button onclick="addQuarterlyGoal(this)">+ Add Another Quarter</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="addYearlyGoal(this)">+ Add Another Year</button>
+                    </div>
+                </div>
+            `;
+
+            threeYearGoals.appendChild(newGoal);
+        });
+
+        // Add yearly goal
+        function addYearlyGoal(button) {
+            const yearlyGoals = button.closest('.yearly-goals');
+            const goalItems = yearlyGoals.querySelectorAll('.goal-item');
+            const yearCount = goalItems.length + 1;
+
+            const newGoal = document.createElement('div');
+            newGoal.className = 'goal-item';
+            newGoal.innerHTML = `
+                <div class="goal-header">
+                    <div class="goal-title">Year ${yearCount}</div>
+                    <div>
+                        <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                        <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                    </div>
+                </div>
+                <input type="text" placeholder="What should you accomplish in year ${yearCount}?">
+                
+                <div class="goal-tree">
+                    <div class="sub-goals quarterly-goals">
+                        <h4>Quarterly Goals</h4>
+                        
+                        <div class="goal-item">
+                            <div class="goal-header">
+                                <div class="goal-title">Q1</div>
+                                <div>
+                                    <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                                    <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                                </div>
+                            </div>
+                            <input type="text" placeholder="What will you accomplish in the first quarter?">
+                            
+                            <div class="goal-tree">
+                                <div class="sub-goals monthly-goals">
+                                    <h5>Monthly Goals</h5>
+                                    
+                                    <div class="goal-item">
+                                        <div class="goal-header">
+                                            <div class="goal-title">Month 1</div>
+                                            <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                                        </div>
+                                        <input type="text" placeholder="What will you accomplish in the first month?">
+                                        <textarea placeholder="What weekly/daily actions will you take to achieve this?"></textarea>
+                                    </div>
+                                    
+                                    <button onclick="addMonthlyGoal(this)">+ Add Another Month</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button onclick="addQuarterlyGoal(this)">+ Add Another Quarter</button>
+                    </div>
+                </div>
+            `;
+
+            button.before(newGoal);
+        }
+
+        // Add quarterly goal
+        function addQuarterlyGoal(button) {
+            const quarterlyGoals = button.closest('.quarterly-goals');
+            const goalItems = quarterlyGoals.querySelectorAll('.goal-item');
+            const quarterCount = goalItems.length + 1;
+
+            const newGoal = document.createElement('div');
+            newGoal.className = 'goal-item';
+            newGoal.innerHTML = `
+                <div class="goal-header">
+                    <div class="goal-title">Q${quarterCount}</div>
+                    <div>
+                        <button class="expand-btn" onclick="toggleSubGoals(this)">Expand</button>
+                        <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                    </div>
+                </div>
+                <input type="text" placeholder="What will you accomplish in quarter ${quarterCount}?">
+                
+                <div class="goal-tree">
+                    <div class="sub-goals monthly-goals">
+                        <h5>Monthly Goals</h5>
+                        
+                        <div class="goal-item">
+                            <div class="goal-header">
+                                <div class="goal-title">Month 1</div>
+                                <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                            </div>
+                            <input type="text" placeholder="What will you accomplish in the first month?">
+                            <textarea placeholder="What weekly/daily actions will you take to achieve this?"></textarea>
+                        </div>
+                        
+                        <button onclick="addMonthlyGoal(this)">+ Add Another Month</button>
+                    </div>
+                </div>
+            `;
+
+            button.before(newGoal);
+        }
+
+        // Add monthly goal
+        function addMonthlyGoal(button) {
+            const monthlyGoals = button.closest('.monthly-goals');
+            const goalItems = monthlyGoals.querySelectorAll('.goal-item');
+            const monthCount = goalItems.length + 1;
+
+            const newGoal = document.createElement('div');
+            newGoal.className = 'goal-item';
+            newGoal.innerHTML = `
+                <div class="goal-header">
+                    <div class="goal-title">Month ${monthCount}</div>
+                    <button class="remove-btn" onclick="removeGoal(this)">Remove</button>
+                </div>
+                <input type="text" placeholder="What will you accomplish in month ${monthCount}?">
+                <textarea placeholder="What weekly/daily actions will you take to achieve this?"></textarea>
+            `;
+
+            button.before(newGoal);
+        }
+
+        // Help modal functionality
+        const modal = document.getElementById('helpModal');
+        const helpLink = document.getElementById('helpLink');
+        const closeBtn = document.querySelector('.close');
+
+        helpLink.onclick = function (e) {
+            e.preventDefault();
+            modal.style.display = 'block';
+        }
+
+        closeBtn.onclick = function () {
+            modal.style.display = 'none';
+        }
+
+        function closeHelpModal() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function (e) {
+            if (e.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Save goals functionality
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            alert('In a real implementation, this would save your goals to local storage or a database. For now, consider taking a screenshot or printing your goals.');
+        });
+
+        // Print goals
+        document.getElementById('printBtn').addEventListener('click', function () {
+            // Expand all goal trees for printing
+            const goalTrees = document.querySelectorAll('.goal-tree');
+            goalTrees.forEach(tree => {
+                tree.style.display = 'block';
+            });
+
+            window.print();
+        });
+    </script>
+</body>
+
+</html>
