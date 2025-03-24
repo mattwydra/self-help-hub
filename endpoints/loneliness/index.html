@@ -1,3 +1,645 @@
-<h1>This page will eventually help you when you're feeling lonely</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finding Peace in Loneliness</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f7f7;
+        }
+
+        h1 {
+            color: #1a746b;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2a9d8f;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .nature-bridge {
+            background-color: #e8f4f1;
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .nature-content {
+            margin-top: 15px;
+            display: none;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-family: inherit;
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        button:hover {
+            background-color: #1a746b;
+        }
+
+        .challenge-container {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .challenge-item {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #2a9d8f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #1a746b;
+        }
+
+        .letter-template {
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #fffdf7;
+            margin: 20px 0;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .letter-prompt {
+            color: #777;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .step {
+            margin-bottom: 15px;
+        }
+
+        .audio-control {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        #natureSounds {
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            margin: 5px 0 15px 0;
+        }
+
+        .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #2a9d8f;
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        /* New styles for the future orientation section */
+        .future-vision {
+            background-color: #edf7fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .vision-step {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-container {
+            margin-top: 20px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .timeline {
+            height: 4px;
+            background-color: #2a9d8f;
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .milestone {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: #2a9d8f;
+            border-radius: 50%;
+            top: -6px;
+            cursor: pointer;
+        }
+
+        .milestone:nth-child(1) {
+            left: 0%;
+        }
+
+        .milestone:nth-child(2) {
+            left: 25%;
+        }
+
+        .milestone:nth-child(3) {
+            left: 50%;
+        }
+
+        .milestone:nth-child(4) {
+            left: 75%;
+        }
+
+        .milestone:nth-child(5) {
+            left: 100%;
+        }
+
+        .milestone-label {
+            position: absolute;
+            color: #1a746b;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+            margin-left: -32px;
+        }
+
+        .milestone-label.top {
+            bottom: 20px;
+        }
+
+        .milestone-label.bottom {
+            top: 20px;
+        }
+
+        .milestone-content {
+            display: none;
+            background-color: #f0f7f7;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .gratitude-practice {
+            background-color: #f7f3e9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .gratitude-item {
+            margin: 10px 0;
+        }
+
+        .gratitude-item input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Finding Peace in Loneliness</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>The Nature Bridge: Finding Connection Beyond People</h2>
+            <div class="nature-bridge">
+                <p>When loneliness feels overwhelming, remember that you are always connected to something larger than
+                    yourself: the natural world that surrounds us all.</p>
+
+                <button id="startNatureBridge">Begin Guided Visualization</button>
+
+                <div id="natureBridgeContent" class="nature-content">
+                    <div class="audio-control">
+                        <p>Optional: Play nature sounds while you read</p>
+                        <audio id="natureSounds" controls>
+                            <source src="/api/placeholder/400/320" type="audio/mp3">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+
+                    <div class="step">
+                        <p>Find a comfortable position and take three deep breaths...</p>
+                        <div class="progress-bar">
+                            <div class="progress" id="progress1"></div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <p>Imagine yourself sitting quietly on the earth. Feel the ground beneath you. This same earth
+                            has supported countless beings for billions of years.</p>
+                    </div>
+
+                    <div class="step">
+                        <p>Consider that every atom in your body was once part of stars, mountains, oceans, and
+                            countless other living things. You are made of the same materials as the trees outside your
+                            window and the birds that fly past.</p>
+                    </div>
+
+                    <div class="step">
+                        <p>Visualize the air entering your lungs. This same air circulates around the entire planet,
+                            connecting you with every other breathing creature.</p>
+                    </div>
+
+                    <div class="step">
+                        <p>Think about the water in your body. This water has cycled through clouds, rivers, and oceans
+                            for millions of years. The water in you has been in countless other living beings.</p>
+                    </div>
+
+                    <div class="step">
+                        <p>Even now, as you sit alone, you are surrounded by life. Microscopic organisms live on your
+                            skin. Plants may be growing nearby. Birds and insects move through the world outside.</p>
+                    </div>
+
+                    <div class="step">
+                        <p>Feel this web of connection. You are never truly alone in the living system of our planet.
+                            Take a moment to feel gratitude for this constant companionship.</p>
+                    </div>
+
+                    <p><em>How do you feel now? Take a moment to write down any thoughts or sensations that arose during
+                            this visualization.</em></p>
+                    <textarea id="natureReflection" placeholder="My reflections..."></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Letter from Your Future Self</h2>
+            <p>Sometimes we need wisdom and perspective that only time can provide. This exercise invites you to connect
+                with a version of yourself who has moved beyond this period of loneliness.</p>
+
+            <div class="letter-template">
+                <p class="letter-prompt">Imagine yourself 5 years in the future, writing a letter to your current self
+                    about this period of loneliness. What would your future self want you to know?</p>
+
+                <textarea id="futureLetter" placeholder="Dear Present Me,
+
+I want you to know that this time of loneliness you're experiencing now isn't permanent. Looking back from where I am now, I can see how this period actually helped shape me in important ways...
+
+[Continue writing as your future self who has perspective on what you're currently experiencing]"></textarea>
+
+                <button id="saveLetter">Save This Letter</button>
+                <p id="letterSaved" style="display: none; color: #2a9d8f;">Letter saved! Come back and read it whenever
+                    you need perspective.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Future Vision Timeline</h2>
+            <p>When feeling lonely, it can be hard to imagine a different future. This exercise helps you reconnect with
+                possibility and hope.</p>
+
+            <div class="future-vision">
+                <p>Imagine your path forward through time. Each milestone represents a point in your journey where
+                    things might be different than they are now.</p>
+
+                <div class="timeline-container">
+                    <div class="timeline">
+                        <div class="milestone" data-target="milestone1"></div>
+                        <div class="milestone" data-target="milestone2"></div>
+                        <div class="milestone" data-target="milestone3"></div>
+                        <div class="milestone" data-target="milestone4"></div>
+                        <div class="milestone" data-target="milestone5"></div>
+
+                        <div class="milestone-label top" style="left: 0%;">Now</div>
+                        <div class="milestone-label bottom" style="left: 25%;">1 Month</div>
+                        <div class="milestone-label top" style="left: 50%;">6 Months</div>
+                        <div class="milestone-label bottom" style="left: 75%;">1 Year</div>
+                        <div class="milestone-label top" style="left: 100%;">5 Years</div>
+                    </div>
+
+                    <div id="milestone1" class="milestone-content">
+                        <h3>Now: Where You Are</h3>
+                        <p>Take a moment to reflect on your current experience of loneliness without judgment.</p>
+                        <p>What specifically feels challenging right now? What small sources of connection might already
+                            exist in your life?</p>
+                        <textarea placeholder="My reflections on where I am now..."></textarea>
+                    </div>
+
+                    <div id="milestone2" class="milestone-content">
+                        <h3>1 Month From Now: Small Steps</h3>
+                        <p>In just one month, small changes can begin to shift your experience.</p>
+                        <p>What is one tiny new habit or practice you could establish in the next month that might
+                            create more connection in your life?</p>
+                        <textarea placeholder="In one month, I could..."></textarea>
+                    </div>
+
+                    <div id="milestone3" class="milestone-content">
+                        <h3>6 Months From Now: Building Momentum</h3>
+                        <p>Six months gives you time to establish new patterns and see results.</p>
+                        <p>Imagine that you've been taking small steps for half a year. What might be different about
+                            your daily experience?</p>
+                        <textarea placeholder="In six months, my daily life might include..."></textarea>
+                    </div>
+
+                    <div id="milestone4" class="milestone-content">
+                        <h3>1 Year From Now: New Normal</h3>
+                        <p>A year from now, today's challenges will be in the past.</p>
+                        <p>What new connections, activities, or practices might be part of your regular life? How might
+                            your relationship with solitude be different?</p>
+                        <textarea placeholder="A year from now, I might..."></textarea>
+                    </div>
+
+                    <div id="milestone5" class="milestone-content">
+                        <h3>5 Years From Now: Transformed Perspective</h3>
+                        <p>Five years brings profound change and growth in how we see ourselves and our lives.</p>
+                        <p>How might you look back on this current period from the vantage point of five years of growth
+                            and change?</p>
+                        <textarea placeholder="Five years from now, I might see this time as..."></textarea>
+                    </div>
+                </div>
+
+                <p class="vision-instruction" style="margin-top: 40px;">Click on each milestone to reflect on that point
+                    in your journey. Try to be as specific and vivid as possible in your imaginings.</p>
+                <button id="saveTimeline">Save My Timeline</button>
+                <p id="timelineSaved" style="display: none; color: #2a9d8f;">Timeline saved! Return to it anytime you
+                    need to remember that the future holds possibilities.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Daily Gratitude Practice</h2>
+            <p>Cultivating gratitude can create a sense of connection and abundance even during lonely times.</p>
+
+            <div class="gratitude-practice">
+                <p>Write three things you're grateful for today. They can be small or large:</p>
+
+                <div class="gratitude-item">
+                    <input type="text" id="gratitude1" placeholder="I'm grateful for...">
+                </div>
+
+                <div class="gratitude-item">
+                    <input type="text" id="gratitude2" placeholder="I'm grateful for...">
+                </div>
+
+                <div class="gratitude-item">
+                    <input type="text" id="gratitude3" placeholder="I'm grateful for...">
+                </div>
+
+                <p style="margin-top: 20px;">Now, identify one thing from your list that connects you to something
+                    larger than yourself (nature, humanity, ancestors, traditions, etc.):</p>
+                <textarea id="gratitudeConnection"
+                    placeholder="This connects me to something larger because..."></textarea>
+
+                <button id="saveGratitude">Save Today's Gratitude</button>
+                <p id="gratitudeSaved" style="display: none; color: #2a9d8f;">Gratitude practice saved!</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Micro-Connection Challenge</h2>
+            <p>Building connection is like building a muscle - it happens gradually through consistent small efforts.
+            </p>
+
+            <div class="challenge-container">
+                <p>Choose one tiny connection to make today:</p>
+
+                <div class="challenge-item">
+                    <input type="checkbox" id="challenge1">
+                    <label for="challenge1">Smile or say hello to someone during a transaction (cashier, delivery
+                        person)</label>
+                </div>
+
+                <div class="challenge-item">
+                    <input type="checkbox" id="challenge2">
+                    <label for="challenge2">Leave a genuine comment on someone's social media post</label>
+                </div>
+
+                <div class="challenge-item">
+                    <input type="checkbox" id="challenge3">
+                    <label for="challenge3">Send a quick "thinking of you" text to someone you haven't spoken to in a
+                        while (with zero expectation of response)</label>
+                </div>
+
+                <div class="challenge-item">
+                    <input type="checkbox" id="challenge4">
+                    <label for="challenge4">Make brief eye contact and nod at someone while on a walk</label>
+                </div>
+
+                <div class="challenge-item">
+                    <input type="checkbox" id="challenge5">
+                    <label for="challenge5">Give a small compliment to someone you interact with</label>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>Remember:</strong> The goal isn't to create deep relationships
+                    immediately but to practice the small skills of human connection. Over time, these micro-connections
+                    create pathways to deeper relationships.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="../../index.html" class="home-button">Return to Hub</a>
+
+    <script>
+        // Nature Bridge Visualization
+        const startNatureBridge = document.getElementById('startNatureBridge');
+        const natureBridgeContent = document.getElementById('natureBridgeContent');
+        const progress1 = document.getElementById('progress1');
+
+        startNatureBridge.addEventListener('click', () => {
+            natureBridgeContent.style.display = 'block';
+            startNatureBridge.style.display = 'none';
+
+            // Animate the first progress bar
+            setTimeout(() => {
+                progress1.style.width = '100%';
+            }, 100);
+        });
+
+        // Future Letter
+        const saveLetter = document.getElementById('saveLetter');
+        const letterSaved = document.getElementById('letterSaved');
+
+        saveLetter.addEventListener('click', () => {
+            const letterContent = document.getElementById('futureLetter').value;
+            if (letterContent.trim() !== '') {
+                // In a real app, you would save this to local storage or a database
+                localStorage.setItem('futureLetter', letterContent);
+                letterSaved.style.display = 'block';
+                setTimeout(() => {
+                    letterSaved.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        // Check if there's a saved letter
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLetter = localStorage.getItem('futureLetter');
+            if (savedLetter) {
+                document.getElementById('futureLetter').value = savedLetter;
+            }
+        });
+
+        // Micro-Connection Challenge
+        document.querySelectorAll('.challenge-item input').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                if (this.checked) {
+                    this.parentElement.style.backgroundColor = '#e8f4f1';
+                    this.parentElement.style.borderLeft = '4px solid #2a9d8f';
+                } else {
+                    this.parentElement.style.backgroundColor = 'white';
+                    this.parentElement.style.borderLeft = 'none';
+                }
+            });
+        });
+
+        // Load saved challenge states
+        window.addEventListener('DOMContentLoaded', () => {
+            for (let i = 1; i <= 5; i++) {
+                const saved = localStorage.getItem(`challenge${i}`);
+                if (saved === 'true') {
+                    const checkbox = document.getElementById(`challenge${i}`);
+                    checkbox.checked = true;
+                    checkbox.parentElement.style.backgroundColor = '#e8f4f1';
+                    checkbox.parentElement.style.borderLeft = '4px solid #2a9d8f';
+                }
+            }
+        });
+
+        // Save challenge states when changed
+        document.querySelectorAll('.challenge-item input').forEach(checkbox => {
+            checkbox.addEventListener('change', function () {
+                localStorage.setItem(this.id, this.checked);
+            });
+        });
+
+        // Future Vision Timeline
+        document.querySelectorAll('.milestone').forEach(milestone => {
+            milestone.addEventListener('click', function () {
+                // Hide all milestone content first
+                document.querySelectorAll('.milestone-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                // Show the clicked milestone's content
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).style.display = 'block';
+
+                // Scroll to the content
+                document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+
+        // Save timeline reflections
+        const saveTimeline = document.getElementById('saveTimeline');
+        const timelineSaved = document.getElementById('timelineSaved');
+
+        saveTimeline.addEventListener('click', () => {
+            // Save all milestone reflections
+            document.querySelectorAll('.milestone-content textarea').forEach(textarea => {
+                if (textarea.value.trim() !== '') {
+                    localStorage.setItem(textarea.parentElement.id + '-reflection', textarea.value);
+                }
+            });
+
+            timelineSaved.style.display = 'block';
+            setTimeout(() => {
+                timelineSaved.style.display = 'none';
+            }, 3000);
+        });
+
+        // Load saved timeline reflections
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.milestone-content textarea').forEach(textarea => {
+                const saved = localStorage.getItem(textarea.parentElement.id + '-reflection');
+                if (saved) {
+                    textarea.value = saved;
+                }
+            });
+        });
+
+        // Gratitude Practice
+        const saveGratitude = document.getElementById('saveGratitude');
+        const gratitudeSaved = document.getElementById('gratitudeSaved');
+
+        saveGratitude.addEventListener('click', () => {
+            const date = new Date().toISOString().split('T')[0]; // Get current date in YYYY-MM-DD format
+
+            // Save gratitude items with date
+            for (let i = 1; i <= 3; i++) {
+                const content = document.getElementById(`gratitude${i}`).value;
+                if (content.trim() !== '') {
+                    localStorage.setItem(`gratitude${i}-${date}`, content);
+                }
+            }
+
+            // Save connection reflection
+            const connection = document.getElementById('gratitudeConnection').value;
+            if (connection.trim() !== '') {
+                localStorage.setItem(`gratitudeConnection-${date}`, connection);
+            }
+
+            gratitudeSaved.style.display = 'block';
+            setTimeout(() => {
+                gratitudeSaved.style.display = 'none';
+            }, 3000);
+        });
+
+        // Show the first milestone content by default
+        document.getElementById('milestone1').style.display = 'block';
+    </script>
+</body>
+
+</html>
