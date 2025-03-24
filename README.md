@@ -61,7 +61,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 2. **Identity Reclamation:**
    "Who Was I Before?" exercise - Guide users to list activities, preferences, and parts of themselves they had before the relationship or that got diminished during it. Create a concrete action plan to reclaim one small element each day.
 
-### Loneliness
+### [Loneliness](endpoints/loneliness/index.html)
 
 1. **Connection Without People:**
    "The Nature Bridge" - A guided visualization where users mentally connect with the natural world. Include prompts about feeling the shared atoms between their body and the trees, remembering that birds, animals, and plants are all around us in a connected ecosystem.
