@@ -1,0 +1,231 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.help-link {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
+
+.goal-section {
+    margin-bottom: 30px;
+    border-left: 4px solid #3498db;
+    padding-left: 20px;
+}
+
+.goal-tree {
+    display: none;
+}
+
+.goal-item {
+    margin: 15px 0;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    position: relative;
+}
+
+.goal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.goal-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.sub-goals {
+    margin-left: 30px;
+    padding-top: 10px;
+    border-left: 2px dashed #bdc3c7;
+    padding-left: 20px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.remove-btn {
+    background-color: #e74c3c;
+    margin-left: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto 100px;
+    /* Changed this line to add bottom margin */
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 10px;
+    position: relative;
+    max-height: calc(80vh - 100px);
+    /* Adjusted to account for bottom space */
+    overflow-y: auto;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#helpContent h2 {
+    color: #3498db;
+    margin-top: 30px;
+}
+
+.question-section {
+    margin: 25px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.question-section h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.save-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#saveBtn {
+    background-color: #27ae60;
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+#saveBtn:hover {
+    background-color: #219653;
+}
+
+#printBtn {
+    background-color: #9b59b6;
+    padding: 12px 25px;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#printBtn:hover {
+    background-color: #8e44ad;
+}
+
+@media print {
+
+    button,
+    .help-link,
+    .no-print {
+        display: none !important;
+    }
+
+    .goal-tree,
+    .sub-goals {
+        display: block !important;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .container {
+        box-shadow: none;
+    }
+}
+
+.home-button {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.home-button:hover {
+    background-color: #2980b9;
+}
