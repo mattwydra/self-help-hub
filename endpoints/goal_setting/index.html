@@ -136,105 +136,106 @@
 
         .modal-content {
             background-color: white;
-            margin: 10% auto;
+            margin: 10% auto 100px;
+            /* Changed this line to add bottom margin */
             padding: 30px;
             width: 80%;
             max-width: 700px;
             border-radius: 10px;
             position: relative;
-            max-height: 80vh;
+            max-height: calc(80vh - 100px);
+            /* Adjusted to account for bottom space */
             overflow-y: auto;
-        }
 
-        .close {
-            position: absolute;
-            right: 15px;
-            top: 10px;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        #helpContent h2 {
-            color: #3498db;
-            margin-top: 30px;
-        }
-
-        .question-section {
-            margin: 25px 0;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-
-        .question-section h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-
-        .save-section {
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        #saveBtn {
-            background-color: #27ae60;
-            padding: 12px 25px;
-            font-size: 16px;
-        }
-
-        #saveBtn:hover {
-            background-color: #219653;
-        }
-
-        #printBtn {
-            background-color: #9b59b6;
-            padding: 12px 25px;
-            font-size: 16px;
-            margin-left: 10px;
-        }
-
-        #printBtn:hover {
-            background-color: #8e44ad;
-        }
-
-        @media print {
-
-            button,
-            .help-link,
-            .no-print {
-                display: none !important;
+            .close {
+                position: absolute;
+                right: 15px;
+                top: 10px;
+                font-size: 24px;
+                cursor: pointer;
             }
 
-            .goal-tree,
-            .sub-goals {
-                display: block !important;
+            #helpContent h2 {
+                color: #3498db;
+                margin-top: 30px;
             }
 
-            body {
-                background-color: white;
+            .question-section {
+                margin: 25px 0;
+                padding: 15px;
+                background: #f8f9fa;
+                border-radius: 8px;
             }
 
-            .container {
-                box-shadow: none;
+            .question-section h3 {
+                margin-top: 0;
+                color: #2c3e50;
             }
-        }
 
-        .home-button {
-            display: block;
-            text-align: center;
-            margin-top: 30px;
-            text-decoration: none;
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
+            .save-section {
+                margin-top: 30px;
+                text-align: center;
+            }
 
-        .home-button:hover {
-            background-color: #2980b9;
-        }
+            #saveBtn {
+                background-color: #27ae60;
+                padding: 12px 25px;
+                font-size: 16px;
+            }
+
+            #saveBtn:hover {
+                background-color: #219653;
+            }
+
+            #printBtn {
+                background-color: #9b59b6;
+                padding: 12px 25px;
+                font-size: 16px;
+                margin-left: 10px;
+            }
+
+            #printBtn:hover {
+                background-color: #8e44ad;
+            }
+
+            @media print {
+
+                button,
+                .help-link,
+                .no-print {
+                    display: none !important;
+                }
+
+                .goal-tree,
+                .sub-goals {
+                    display: block !important;
+                }
+
+                body {
+                    background-color: white;
+                }
+
+                .container {
+                    box-shadow: none;
+                }
+            }
+
+            .home-button {
+                display: block;
+                text-align: center;
+                margin-top: 30px;
+                text-decoration: none;
+                background-color: #3498db;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 5px;
+                font-weight: bold;
+                transition: background-color 0.3s;
+            }
+
+            .home-button:hover {
+                background-color: #2980b9;
+            }
     </style>
 </head>
 
