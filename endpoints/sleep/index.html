@@ -1,6 +1,143 @@
-<h1>This page will eventually help you when you're struggling to fall asleep</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-Try breathing calmly. Breathe in for 10 seconds, then out for 10 seconds, drawing and exhaling as little breath as
-possible.
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Support</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
 
-<link rel="stylesheet" href="../styles.css" />
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        #sleep-content {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sleep Support</h1>
+        <p>What's keeping you awake?</p>
+        <div class="button-group">
+            <button onclick="loadSleepStrategy('anxiety')">Anxiety</button>
+            <button onclick="loadSleepStrategy('racing-thoughts')">Racing Thoughts</button>
+            <button onclick="loadSleepStrategy('physical')">Physical Discomfort</button>
+            <button onclick="loadSleepStrategy('relaxation')">Need to Relax</button>
+        </div>
+        <div id="sleep-content"></div>
+        <button onclick="resetContent()">Reset</button>
+    </div>
+
+    <script>
+        const sleepStrategies = {
+            "anxiety": `
+                <h2>Managing Sleep Anxiety</h2>
+                <p>When anxiety keeps you awake, try these techniques:</p>
+                <ul>
+                    <li><strong>Grounding Exercise:</strong> 5-4-3-2-1 Sensory Method
+                        <br>• Identify 5 things you can see
+                        <br>• 4 things you can touch
+                        <br>• 3 things you can hear
+                        <br>• 2 things you can smell
+                        <br>• 1 thing you can taste
+                    </li>
+                    <li><strong>Worry Journal:</strong> Write down anxious thoughts 1 hour before bed to process them</li>
+                    <li><strong>Breathing Technique:</strong> 4-7-8 Breath (Inhale 4 sec, Hold 7 sec, Exhale 8 sec)</li>
+                </ul>
+            `,
+            "racing-thoughts": `
+                <h2>Calming Racing Thoughts</h2>
+                <p>Strategies to quiet your mind:</p>
+                <ul>
+                    <li><strong>Mental Reset:</strong> Imagine a calm, peaceful scene in vivid detail</li>
+                    <li><strong>Thought Stopping:</strong> When a thought enters, visualize a STOP sign</li>
+                    <li><strong>Progressive Muscle Relaxation:</strong> Systematically tense and relax muscle groups</li>
+                    <li><strong>White Noise:</strong> Use apps or sounds that create consistent background noise</li>
+                </ul>
+            `,
+            "physical": `
+                <h2>Addressing Physical Discomfort</h2>
+                <p>Physical strategies for better sleep:</p>
+                <ul>
+                    <li><strong>Stretch Routine:</strong> Gentle yoga or stretching 30 minutes before bed</li>
+                    <li><strong>Comfortable Environment:</strong> 
+                        <br>• Cool room (60-67°F)
+                        <br>• Dark space
+                        <br>• Comfortable mattress and pillows
+                    </li>
+                    <li><strong>Herbal Tea:</strong> Chamomile or lavender tea to relax muscles</li>
+                    <li><strong>Warm Bath:</strong> Take a warm bath 1-2 hours before bedtime</li>
+                </ul>
+            `,
+            "relaxation": `
+                <h2>Deep Relaxation Techniques</h2>
+                <p>Methods to help you unwind:</p>
+                <ul>
+                    <li><strong>Guided Meditation:</strong> Use free apps like Insight Timer or YouTube guides</li>
+                    <li><strong>Body Scan Meditation:</strong> Mentally scan and release tension in each body part</li>
+                    <li><strong>Soft Music:</strong> Low-tempo instrumental or nature sounds</li>
+                    <li><strong>Aromatherapy:</strong> Lavender or vanilla essential oils</li>
+                </ul>
+            `
+        };
+
+        function loadSleepStrategy(strategy) {
+            const sleepContent = document.getElementById('sleep-content');
+            sleepContent.innerHTML = sleepStrategies[strategy];
+        }
+
+        function resetContent() {
+            const sleepContent = document.getElementById('sleep-content');
+            sleepContent.innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
