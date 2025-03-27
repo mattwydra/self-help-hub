@@ -1,3 +1,485 @@
-<h1>This page will eventually help you when you're feeling bored</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boredom Relief</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fcf8ff;
+        }
+
+        h1 {
+            color: #6200ea;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #7c4dff;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .roulette-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .wheel-container {
+            position: relative;
+            width: 300px;
+            margin: 40px auto 20px;
+        }
+
+        .wheel {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            position: relative;
+            margin: 0 auto;
+            background: #7c4dff;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 3s ease-out;
+        }
+
+        .wheel-section {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 50%, 100% 0, 0 0);
+            transform-origin: 50% 50%;
+        }
+
+
+        .spin-button {
+            background-color: #7c4dff;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .spin-button:hover {
+            background-color: #6200ea;
+        }
+
+        .spin-button:disabled {
+            background-color: #b8a8e6;
+            cursor: not-allowed;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f0ff;
+            border-radius: 8px;
+            text-align: left;
+            display: none;
+        }
+
+        .create-container {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .create-challenge {
+            margin: 15px 0;
+            padding: 15px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .challenge-timer {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .timer-display {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #7c4dff;
+            margin: 10px 0;
+        }
+
+        .minigames-link {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .minigames-button {
+            display: inline-block;
+            background-color: #7c4dff;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .minigames-button:hover {
+            background-color: #6200ea;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #7c4dff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #6200ea;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: inherit;
+        }
+
+        .pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 30px solid #333;
+            z-index: 1;
+        }
+
+        .section-title {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            transform-origin: center;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Boredom Relief</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Curiosity Roulette</h2>
+            <p>Spin the wheel to discover something interesting to learn about or explore. Each prompt is designed to
+                spark curiosity and engage your mind.</p>
+
+            <div class="roulette-container">
+                <div class="wheel-container">
+                    <div class="pointer"></div>
+                    <div id="wheel" class="wheel">
+                        <!-- Wheel sections will be added by JavaScript -->
+                    </div>
+                </div>
+
+                <button id="spinButton" class="spin-button">Spin the Wheel</button>
+
+                <div id="result" class="result">
+                    <h3 id="resultTitle">Your Curiosity Challenge:</h3>
+                    <p id="resultDescription"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Create-Don't-Consume Challenge</h2>
+            <p>Transform from passive consumer to active creator with these quick creative challenges.</p>
+
+            <div class="create-container">
+                <p>Select a 5-minute creative challenge:</p>
+
+                <div class="create-challenge">
+                    <h3>Micro-Story Challenge</h3>
+                    <p>Write a complete story in exactly 6 sentences. Include a character, a problem, and a resolution.
+                    </p>
+
+                    <textarea id="microStory" placeholder="Start your micro-story here..."></textarea>
+
+                    <div class="challenge-timer">
+                        <div class="timer-display" id="storyTimer">5:00</div>
+                        <button id="startStoryTimer" class="spin-button">Start Timer</button>
+                    </div>
+                </div>
+
+                <div class="create-challenge">
+                    <h3>Design Challenge</h3>
+                    <p>Redesign an everyday object to solve a common problem with it. Describe or sketch your solution.
+                    </p>
+
+                    <p>Example: How would you redesign a coffee cup to prevent spills but still be enjoyable to drink
+                        from?</p>
+
+                    <textarea id="designChallenge" placeholder="Describe your redesign here..."></textarea>
+
+                    <div class="challenge-timer">
+                        <div class="timer-display" id="designTimer">5:00</div>
+                        <button id="startDesignTimer" class="spin-button">Start Timer</button>
+                    </div>
+                </div>
+
+                <div class="create-challenge">
+                    <h3>Observation Challenge</h3>
+                    <p>Look around your current environment and find three objects. Create an unexpected connection
+                        between them or invent a story that involves all three.</p>
+
+                    <textarea id="observationChallenge"
+                        placeholder="Write your connections or story here..."></textarea>
+
+                    <div class="challenge-timer">
+                        <div class="timer-display" id="observationTimer">5:00</div>
+                        <button id="startObservationTimer" class="spin-button">Start Timer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Boredom-Busting Activities</h2>
+            <p>Try these engaging activities when you need a quick mental refresh:</p>
+
+            <ul>
+                <li><strong>Five Senses Challenge</strong> - Identify 5 things you can see, 4 things you can touch, 3
+                    things you can hear, 2 things you can smell, and 1 thing you can taste in your current environment.
+                </li>
+                <li><strong>Memory Palace</strong> - Pick a sequence of 10 random words and create a vivid mental
+                    journey to remember them in order.</li>
+                <li><strong>Random Skills Practice</strong> - Spend 10 minutes learning a small skill like juggling with
+                    two objects, balancing a pencil on your finger, or learning a simple card trick.</li>
+                <li><strong>Reverse Engineering</strong> - Pick an everyday object and try to sketch its internal
+                    components or think about how it might be manufactured.</li>
+                <li><strong>Mind Mapping</strong> - Start with a central concept and draw a mind map with as many
+                    branching connections as you can think of in 5 minutes.</li>
+            </ul>
+        </div>
+
+        <div class="minigames-link">
+            <h2>Looking for More Interactive Fun?</h2>
+            <a href="https://mattwydra.github.io/projects/" class="minigames-button">Go to Minigames</a>
+            <p style="margin-top: 15px;">This redirects to a minigames hub that I've been developing for around 5
+                months. There are brain games, minigames to help you with some real-world skills (reaction time, typing,
+                etc.), as well as some 'turn-your-brain-off' minigames.</p>
+        </div>
+    </div>
+
+    <a href="../../index.html" class="home-button">Return to Hub</a>
+
+    <script>
+        // Curiosity Roulette
+        const wheel = document.getElementById('wheel');
+        const spinButton = document.getElementById('spinButton');
+        const result = document.getElementById('result');
+        const resultDescription = document.getElementById('resultDescription');
+
+        // Wheel content
+        const wheelItems = [
+            {
+                title: "Nature Mystery",
+                description: "Research why flamingos are pink. What in their diet causes this coloration, and are any other animals colored by their food?",
+                color: "#9c27b0"
+            },
+            {
+                title: "Language Snack",
+                description: "Learn how to say 'I'm curious about your culture' in a language you don't speak. Practice pronouncing it correctly.",
+                color: "#673ab7"
+            },
+            {
+                title: "Science Wonder",
+                description: "Find out why the sky is blue during the day but red/orange at sunset. What causes this dramatic color change?",
+                color: "#3f51b5"
+            },
+            {
+                title: "Historic Moment",
+                description: "Research an event that happened exactly 100 years ago today. How does it connect to our present world?",
+                color: "#2196f3"
+            },
+            {
+                title: "Skill Sample",
+                description: "Watch a 5-minute tutorial on a skill you've never tried before, like origami, speed reading, or basic card tricks.",
+                color: "#009688"
+            },
+            {
+                title: "Thought Experiment",
+                description: "If you could instantly master any musical instrument, which would you choose and why? What would be the first song you'd learn?",
+                color: "#4caf50"
+            },
+            {
+                title: "Cultural Dive",
+                description: "Find a traditional folk tale from a culture you're not familiar with. What values or lessons does it teach?",
+                color: "#8bc34a"
+            },
+            {
+                title: "Math Puzzle",
+                description: "Research the Monty Hall Problem. Understanding this probability puzzle might surprise you!",
+                color: "#cddc39"
+            }
+        ];
+
+        // Create wheel sections
+        let rotationAngle = 0;
+        const sectionAngle = 360 / wheelItems.length;
+
+        wheelItems.forEach((item, index) => {
+            const section = document.createElement('div');
+            section.className = 'wheel-section';
+            section.style.backgroundColor = item.color;
+            section.style.transform = `rotate(${rotationAngle}deg)`;
+
+            const title = document.createElement('div');
+            title.className = 'section-title';
+            title.textContent = item.title;
+            section.appendChild(title);
+
+            wheel.appendChild(section);
+            rotationAngle += sectionAngle;
+        });
+
+        // Spin functionality
+        let spinning = false;
+        let currentRotation = 0;
+
+        spinButton.addEventListener('click', () => {
+            if (spinning) return;
+
+            spinning = true;
+            spinButton.disabled = true;
+            result.style.display = 'none';
+
+            // Random rotation between 2 and 5 full spins plus a random section
+            const spins = 2 + Math.random() * 3;
+            const randomSectionAngle = Math.floor(Math.random() * wheelItems.length) * sectionAngle;
+            const totalRotation = 360 * spins + randomSectionAngle;
+
+            // Apply rotation
+            currentRotation += totalRotation;
+            wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+            // After animation completes
+            setTimeout(() => {
+                // Determine the winning section
+                const normalizedRotation = (currentRotation % 360 + 360) % 360;
+                const winningIndex = Math.floor((360 - (normalizedRotation % 360)) / sectionAngle) % wheelItems.length;
+                const winningItem = wheelItems[winningIndex];
+
+                // Display result
+                resultDescription.textContent = winningItem.description;
+                result.style.display = 'block';
+
+                spinning = false;
+                spinButton.disabled = false;
+            }, 3000); // Match this to the CSS transition time
+        });
+
+        // Timer functionality for creative challenges
+        function createTimer(timerElement, buttonElement) {
+            let timeLeft = 300; // 5 minutes in seconds
+            let timerInterval;
+            let running = false;
+
+            function updateDisplay() {
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+            }
+
+            buttonElement.addEventListener('click', () => {
+                if (running) {
+                    // Stop the timer
+                    clearInterval(timerInterval);
+                    buttonElement.textContent = 'Start Timer';
+                    running = false;
+                    timeLeft = 300; // Reset to 5 minutes
+                    updateDisplay();
+                } else {
+                    // Start the timer
+                    running = true;
+                    buttonElement.textContent = 'Reset Timer';
+
+                    timerInterval = setInterval(() => {
+                        timeLeft--;
+                        updateDisplay();
+
+                        if (timeLeft <= 0) {
+                            clearInterval(timerInterval);
+                            buttonElement.textContent = 'Start Timer';
+                            running = false;
+
+                            // Alert when time is up
+                            alert('Time\'s up! How did your creative challenge go?');
+
+                            timeLeft = 300; // Reset to 5 minutes
+                            updateDisplay();
+                        }
+                    }, 1000);
+                }
+            });
+        }
+
+        // Initialize all timers
+        createTimer(
+            document.getElementById('storyTimer'),
+            document.getElementById('startStoryTimer')
+        );
+
+        createTimer(
+            document.getElementById('designTimer'),
+            document.getElementById('startDesignTimer')
+        );
+
+        createTimer(
+            document.getElementById('observationTimer'),
+            document.getElementById('startObservationTimer')
+        );
+    </script>
+</body>
+
+</html>
