@@ -3,6 +3,9 @@
 ## Project Overview
 Boredom Relief is an interactive web application designed to provide engaging activities and challenges to combat boredom through active engagement and creativity. The platform transforms idle time into opportunities for learning, creativity, and mental stimulation.
 
+## Need to fix
+- Text on the wheel needs formatting help
+
 ## Key Features
 
 1. **Curiosity Roulette**
