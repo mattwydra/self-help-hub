@@ -1,3 +1,557 @@
-<h1>This page will eventually help you when you're feeling depressed</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Support</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #34495e;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #2980b9;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .win-tracker {
+            background-color: #edf7ff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        .wins-container {
+            margin-top: 15px;
+        }
+
+        .win-item {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .win-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .win-date {
+            margin-left: auto;
+            font-size: 0.85em;
+            color: #777;
+        }
+
+        .add-win {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .add-win input {
+            flex-grow: 1;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #3498db;
+        }
+
+        .timer-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .timer-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2980b9;
+            margin: 10px 0;
+        }
+
+        .timer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .mindfulness-container {
+            background-color: #f7f9fc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .task-focus {
+            margin-top: 15px;
+        }
+
+        .task-selection {
+            margin: 15px 0;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: inherit;
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #3498db;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #7f8c8d;
+        }
+
+        .wins-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .win-counter {
+            background-color: #2980b9;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        .progress-indicator {
+            text-align: center;
+            margin: 15px 0;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background-color: #ecf0f1;
+            border-radius: 5px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: #2980b9;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .campfire-visualization {
+            background-color: #fffaed;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 5px solid #e67e22;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Depression Support</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>Small Wins Tracker</h2>
+            <p>Depression can make everything feel overwhelming. Building momentum through small victories can help
+                create positive change.</p>
+
+            <div class="win-tracker">
+                <div class="wins-header">
+                    <h3>My Wins</h3>
+                    <span class="win-counter" id="winCounter">0 wins</span>
+                </div>
+
+                <div class="progress-indicator">
+                    <p id="progressText">You're just getting started. Every small win matters!</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div id="winsContainer" class="wins-container">
+                    <!-- Suggested wins with checkboxes -->
+                    <div class="win-item">
+                        <input type="checkbox" id="win1" class="win-checkbox">
+                        <label for="win1">I got out of bed today</label>
+                        <span class="win-date" id="date1"></span>
+                    </div>
+
+                    <div class="win-item">
+                        <input type="checkbox" id="win2" class="win-checkbox">
+                        <label for="win2">I drank some water</label>
+                        <span class="win-date" id="date2"></span>
+                    </div>
+
+                    <div class="win-item">
+                        <input type="checkbox" id="win3" class="win-checkbox">
+                        <label for="win3">I opened the curtains to let in light</label>
+                        <span class="win-date" id="date3"></span>
+                    </div>
+
+                    <div class="win-item">
+                        <input type="checkbox" id="win4" class="win-checkbox">
+                        <label for="win4">I brushed my teeth</label>
+                        <span class="win-date" id="date4"></span>
+                    </div>
+
+                    <div class="win-item">
+                        <input type="checkbox" id="win5" class="win-checkbox">
+                        <label for="win5">I ate something</label>
+                        <span class="win-date" id="date5"></span>
+                    </div>
+                </div>
+
+                <div class="add-win">
+                    <input type="text" id="newWinInput" placeholder="Add your own win...">
+                    <button id="addWinBtn">Add</button>
+                </div>
+
+                <p style="margin-top: 20px; font-style: italic;">Remember: No win is too small. Each step forward
+                    matters.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5-Minute Sunlight Timer</h2>
+            <p>Even brief exposure to natural light can help regulate your mood and circadian rhythm.</p>
+
+            <div class="timer-container">
+                <p>Set this timer when you're able to sit near a window or step outside for just 5 minutes of natural
+                    light:</p>
+
+                <div class="timer-display" id="timerDisplay">5:00</div>
+
+                <div class="timer-buttons">
+                    <button id="startTimer">Start</button>
+                    <button id="resetTimer">Reset</button>
+                </div>
+
+                <p id="timerMessage" style="margin-top: 15px; font-style: italic;">Natural light helps regulate your
+                    body's internal clock and can boost serotonin production.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>"Just This" Mindfulness</h2>
+            <p>When everything feels overwhelming, focusing fully on just one simple task can provide relief and a sense
+                of accomplishment.</p>
+
+            <div class="mindfulness-container">
+                <div class="task-selection">
+                    <p>Choose one small task to focus on completely:</p>
+                    <select id="taskSelect">
+                        <option value="">Select a task...</option>
+                        <option value="dish">Washing one dish</option>
+                        <option value="clothing">Folding one piece of clothing</option>
+                        <option value="surface">Wiping one surface clean</option>
+                        <option value="plant">Watering one plant</option>
+                        <option value="custom">Something else (describe below)</option>
+                    </select>
+
+                    <textarea id="customTask" placeholder="Describe your chosen simple task..."
+                        style="display: none;"></textarea>
+                </div>
+
+                <div class="task-focus" id="taskFocus" style="display: none;">
+                    <h3 id="focusTaskTitle">Focus on: <span id="taskName"></span></h3>
+
+                    <p>As you perform this task:</p>
+                    <ul>
+                        <li>Notice the sensations in your hands</li>
+                        <li>Pay attention to the textures you can feel</li>
+                        <li>Observe any sounds associated with the task</li>
+                        <li>If your mind wanders, gently bring it back to just this one task</li>
+                    </ul>
+
+                    <button id="completeTask" style="margin-top: 15px;">I've Completed This Task</button>
+
+                    <div id="completionMessage"
+                        style="display: none; margin-top: 15px; padding: 10px; background-color: #eaffea; border-radius: 5px;">
+                        <p>Well done! By focusing on just this one task, you've practiced being present in the moment.
+                            This skill can help create islands of calm during difficult times.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Campfire Grief Visualization</h2>
+            <p>Depression often contains elements of grief. This visualization can help process those feelings.</p>
+
+            <div class="campfire-visualization">
+                <p>When you're ready, find a quiet moment to try this powerful visualization:</p>
+
+                <blockquote style="border-left: 3px solid #e67e22; padding-left: 15px; margin-left: 10px;">
+                    <p>Imagine you're sitting by a campfire, two logs on their side, right next to each other. You're on
+                        the left, and you're looking over to the other log. Allow your grief to come over you, and take
+                        whatever form feels right. Perhaps a puppy or a younger version of yourself; someone who needed
+                        love and support and never received it.</p>
+
+                    <p>Now, give that to yourself. "A bend in the road isn't the end of the road… unless you fail to
+                        make the turn." Remind yourself that you're here for you. You're proud of you.</p>
+
+                    <p>Go out, and fail; failure is okay, but not giving your all is not. Don't fear failure, fear not
+                        leaving it all on the field. At the end of the day, go out and fight like hell. Chase after your
+                        dreams; chase after them because your life depends on it.</p>
+
+                    <p>If you fail, pick yourself back up because it's never the end. Life will beat you down to your
+                        knees and keep you there, if you let it.</p>
+
+                    <p>Finally, give yourself a hug, and feel the grief dissipate slowly as you take deep breaths.</p>
+                </blockquote>
+
+                <p style="margin-top: 15px;">Return to this visualization whenever you need to process difficult
+                    emotions. It can be particularly helpful before sleep or when you're feeling overwhelmed.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="../../index.html" class="home-button">Return to Hub</a>
+
+    <script>
+        // Small Wins Tracker
+        const addWinBtn = document.getElementById('addWinBtn');
+        const newWinInput = document.getElementById('newWinInput');
+        const winsContainer = document.getElementById('winsContainer');
+        const winCounter = document.getElementById('winCounter');
+        const progressFill = document.getElementById('progressFill');
+        const progressText = document.getElementById('progressText');
+
+        let winCount = 0;
+
+        // Initialize existing win checkboxes
+        document.querySelectorAll('.win-checkbox').forEach((checkbox, index) => {
+            checkbox.addEventListener('change', function () {
+                const winItem = this.parentElement;
+                const dateSpan = winItem.querySelector('.win-date');
+
+                if (this.checked) {
+                    winItem.classList.add('completed');
+                    dateSpan.textContent = new Date().toLocaleDateString();
+                    winCount++;
+                } else {
+                    winItem.classList.remove('completed');
+                    dateSpan.textContent = '';
+                    winCount--;
+                }
+
+                updateWinCounter();
+            });
+        });
+
+        // Add new win
+        addWinBtn.addEventListener('click', () => {
+            const winText = newWinInput.value.trim();
+            if (winText) {
+                const winId = 'win' + (document.querySelectorAll('.win-item').length + 1);
+                const dateId = 'date' + (document.querySelectorAll('.win-item').length + 1);
+
+                const winItem = document.createElement('div');
+                winItem.className = 'win-item';
+                winItem.innerHTML = `
+                    <input type="checkbox" id="${winId}" class="win-checkbox">
+                    <label for="${winId}">${winText}</label>
+                    <span class="win-date" id="${dateId}"></span>
+                `;
+
+                winsContainer.appendChild(winItem);
+                newWinInput.value = '';
+
+                // Add event listener to new checkbox
+                const newCheckbox = document.getElementById(winId);
+                newCheckbox.addEventListener('change', function () {
+                    const winItem = this.parentElement;
+                    const dateSpan = winItem.querySelector('.win-date');
+
+                    if (this.checked) {
+                        winItem.classList.add('completed');
+                        dateSpan.textContent = new Date().toLocaleDateString();
+                        winCount++;
+                    } else {
+                        winItem.classList.remove('completed');
+                        dateSpan.textContent = '';
+                        winCount--;
+                    }
+
+                    updateWinCounter();
+                });
+            }
+        });
+
+        function updateWinCounter() {
+            winCounter.textContent = `${winCount} ${winCount === 1 ? 'win' : 'wins'}`;
+
+            // Update progress bar - assuming 10 wins is a full bar
+            const progressPercentage = Math.min(winCount * 10, 100);
+            progressFill.style.width = `${progressPercentage}%`;
+
+            // Update progress text
+            if (winCount === 0) {
+                progressText.textContent = "You're just getting started. Every small win matters!";
+            } else if (winCount < 3) {
+                progressText.textContent = "Great start! Keep collecting those wins.";
+            } else if (winCount < 7) {
+                progressText.textContent = "You're building momentum! How does it feel?";
+            } else {
+                progressText.textContent = "Impressive progress! You're proving your resilience.";
+            }
+        }
+
+        // 5-Minute Sunlight Timer
+        const timerDisplay = document.getElementById('timerDisplay');
+        const startTimerBtn = document.getElementById('startTimer');
+        const resetTimerBtn = document.getElementById('resetTimer');
+        const timerMessage = document.getElementById('timerMessage');
+
+        let timerInterval;
+        let timeLeft = 300; // 5 minutes in seconds
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+
+        startTimerBtn.addEventListener('click', () => {
+            if (startTimerBtn.textContent === 'Start') {
+                startTimerBtn.textContent = 'Pause';
+
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    timerDisplay.textContent = formatTime(timeLeft);
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        timerDisplay.textContent = 'Done!';
+                        startTimerBtn.textContent = 'Start';
+                        timerMessage.textContent = 'Well done! Even this brief exposure to light can help regulate your body clock.';
+                        timeLeft = 300;
+                    }
+                }, 1000);
+            } else {
+                clearInterval(timerInterval);
+                startTimerBtn.textContent = 'Start';
+            }
+        });
+
+        resetTimerBtn.addEventListener('click', () => {
+            clearInterval(timerInterval);
+            timeLeft = 300;
+            timerDisplay.textContent = formatTime(timeLeft);
+            startTimerBtn.textContent = 'Start';
+            timerMessage.textContent = 'Natural light helps regulate your body\'s internal clock and can boost serotonin production.';
+        });
+
+        // "Just This" Mindfulness
+        const taskSelect = document.getElementById('taskSelect');
+        const customTask = document.getElementById('customTask');
+        const taskFocus = document.getElementById('taskFocus');
+        const taskName = document.getElementById('taskName');
+        const completeTaskBtn = document.getElementById('completeTask');
+        const completionMessage = document.getElementById('completionMessage');
+
+        taskSelect.addEventListener('change', () => {
+            if (taskSelect.value === 'custom') {
+                customTask.style.display = 'block';
+            } else {
+                customTask.style.display = 'none';
+            }
+
+            if (taskSelect.value) {
+                taskFocus.style.display = 'block';
+
+                // Set task name based on selection
+                if (taskSelect.value === 'custom') {
+                    taskName.textContent = 'your chosen task';
+                } else if (taskSelect.value === 'dish') {
+                    taskName.textContent = 'washing one dish';
+                } else if (taskSelect.value === 'clothing') {
+                    taskName.textContent = 'folding one piece of clothing';
+                } else if (taskSelect.value === 'surface') {
+                    taskName.textContent = 'wiping one surface clean';
+                } else if (taskSelect.value === 'plant') {
+                    taskName.textContent = 'watering one plant';
+                }
+            } else {
+                taskFocus.style.display = 'none';
+            }
+        });
+
+        customTask.addEventListener('input', () => {
+            if (customTask.value.trim()) {
+                taskName.textContent = customTask.value.trim();
+            } else {
+                taskName.textContent = 'your chosen task';
+            }
+        });
+
+        completeTaskBtn.addEventListener('click', () => {
+            completionMessage.style.display = 'block';
+            completeTaskBtn.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
