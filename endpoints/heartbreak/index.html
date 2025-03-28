@@ -1,3 +1,321 @@
-<h1>This page will eventually help you to deal with heartbreak</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heartbreak Recovery</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f7fc;
+        }
+
+        h1 {
+            color: #8e44ad;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #9b59b6;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .canvas-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        #futureCanvas {
+            border: 2px dashed #9b59b6;
+            background-color: #fcfcfc;
+            cursor: pointer;
+        }
+
+        .controls {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #8e44ad;
+        }
+
+        .identity-container {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .identity-exercise {
+            margin-top: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #9b59b6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #8e44ad;
+        }
+
+        .image-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .image-option {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+        }
+
+        .prompt {
+            font-style: italic;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .saved-item {
+            padding: 8px;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Heartbreak Recovery</h1>
+
+    <div class="container">
+        <div class="section">
+            <h2>The Empty Canvas: Visualizing Your Future</h2>
+            <p>This activity helps you reconnect with the possibility that exists in your future, independent of your
+                past relationship.</p>
+
+            <div class="canvas-container">
+                <canvas id="futureCanvas" width="600" height="400"></canvas>
+                <div class="controls">
+                    <button id="addItem">Add to Your Future</button>
+                    <button id="clearCanvas">Start Over</button>
+                </div>
+            </div>
+
+            <div class="image-options" id="imageOptions" style="display: none;">
+                <div class="image-option" data-symbol="✈️">✈️</div>
+                <div class="image-option" data-symbol="🏠">🏠</div>
+                <div class="image-option" data-symbol="📚">📚</div>
+                <div class="image-option" data-symbol="🎭">🎭</div>
+                <div class="image-option" data-symbol="👥">👥</div>
+                <div class="image-option" data-symbol="💼">💼</div>
+                <div class="image-option" data-symbol="🌿">🌿</div>
+                <div class="image-option" data-symbol="🎵">🎵</div>
+                <div class="image-option" data-symbol="🌟">🌟</div>
+                <div class="image-option" data-symbol="🏔️">🏔️</div>
+                <div class="image-option" data-symbol="🍳">🍳</div>
+                <div class="image-option" data-symbol="🖋️">🖋️</div>
+            </div>
+
+            <div id="promptContainer" style="margin-top: 15px;">
+                <p class="prompt">Click "Add to Your Future" to begin placing elements on your canvas that represent
+                    things you're looking forward to.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Identity Reclamation: Who Was I Before?</h2>
+            <p>Relationships can sometimes cause us to set aside parts of ourselves. This exercise helps you reconnect
+                with those forgotten aspects of your identity.</p>
+
+            <div class="identity-container">
+                <div class="identity-exercise">
+                    <p>List activities, preferences, or parts of yourself that existed before the relationship or got
+                        diminished during it:</p>
+                    <textarea id="identityText"
+                        placeholder="Example: Playing guitar, my love of sci-fi books, weekend hikes, my creativity..."></textarea>
+                    <button id="saveIdentity">Save to My List</button>
+                </div>
+
+                <div id="savedItems">
+                    <h3>My Reclamation List:</h3>
+                    <div id="itemsList">
+                        <!-- Saved items will appear here -->
+                    </div>
+                </div>
+
+                <div class="action-plan" style="margin-top: 20px;">
+                    <p><strong>Your Mission:</strong> Choose one item from your list to reconnect with this week, even
+                        in a small way.</p>
+                    <p>Remember, reclaiming your identity is a gradual process. Small steps lead to significant healing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="../../index.html" class="home-button">Return to Hub</a>
+
+    <script>
+        // Canvas functionality
+        const canvas = document.getElementById('futureCanvas');
+        const ctx = canvas.getContext('2d');
+        const addItemBtn = document.getElementById('addItem');
+        const clearCanvasBtn = document.getElementById('clearCanvas');
+        const imageOptions = document.getElementById('imageOptions');
+        const promptContainer = document.getElementById('promptContainer');
+
+        let isPlacing = false;
+        let placingSymbol = '';
+
+        // Initialize canvas
+        function initCanvas() {
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.font = '20px Arial';
+            ctx.fillStyle = '#aaa';
+            ctx.textAlign = 'center';
+            ctx.fillText('Your Future Awaits...', canvas.width / 2, canvas.height / 2);
+        }
+
+        initCanvas();
+
+        // Event listeners
+        addItemBtn.addEventListener('click', () => {
+            if (!isPlacing) {
+                isPlacing = true;
+                imageOptions.style.display = 'flex';
+                promptContainer.innerHTML = '<p class="prompt">Select a symbol that represents something you want in your future.</p>';
+            } else {
+                isPlacing = false;
+                imageOptions.style.display = 'none';
+                promptContainer.innerHTML = '<p class="prompt">Click "Add to Your Future" to continue building your vision.</p>';
+            }
+        });
+
+        clearCanvasBtn.addEventListener('click', () => {
+            initCanvas();
+        });
+
+        // Image option selection
+        document.querySelectorAll('.image-option').forEach(option => {
+            option.addEventListener('click', () => {
+                placingSymbol = option.dataset.symbol;
+                imageOptions.style.display = 'none';
+                promptContainer.innerHTML = '<p class="prompt">Click anywhere on the canvas to place this symbol. Then add a brief note about what it represents.</p>';
+            });
+        });
+
+        // Canvas click to place symbol
+        canvas.addEventListener('click', (e) => {
+            if (isPlacing && placingSymbol) {
+                const rect = canvas.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                ctx.font = '30px Arial';
+                ctx.fillStyle = '#333';
+                ctx.textAlign = 'center';
+                ctx.fillText(placingSymbol, x, y);
+
+                const text = prompt("What does this represent in your future?", "");
+                if (text) {
+                    ctx.font = '14px Arial';
+                    ctx.fillText(text, x, y + 30);
+                }
+
+                isPlacing = false;
+                placingSymbol = '';
+                promptContainer.innerHTML = '<p class="prompt">Click "Add to Your Future" to continue building your vision.</p>';
+            }
+        });
+
+        // Identity reclamation functionality
+        const saveIdentityBtn = document.getElementById('saveIdentity');
+        const identityText = document.getElementById('identityText');
+        const itemsList = document.getElementById('itemsList');
+
+        saveIdentityBtn.addEventListener('click', () => {
+            const text = identityText.value.trim();
+            if (text) {
+                const item = document.createElement('div');
+                item.className = 'saved-item';
+                item.innerHTML = `
+                    <p>${text}</p>
+                    <button class="small-action">Commit to This Week</button>
+                `;
+                itemsList.appendChild(item);
+                identityText.value = '';
+
+                // Add event listener to the commit button
+                item.querySelector('.small-action').addEventListener('click', function () {
+                    this.textContent = "I'm doing this!";
+                    this.style.backgroundColor = "#9b59b6";
+                    this.style.color = "white";
+                    item.style.borderLeft = "4px solid #9b59b6";
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
