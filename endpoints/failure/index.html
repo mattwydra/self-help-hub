@@ -1,3 +1,443 @@
-<h1>This page will eventually help you to embrace the idea of failure and use it to succeed</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embracing Failure - Growth Mindset Activity</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #2c3e50;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            background-color: #f1f8ff;
+            border-left: 4px solid #4a90e2;
+            margin: 20px 0;
+        }
+
+        .story {
+            padding: 15px;
+            background-color: #f8f5ff;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        textarea,
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357abd;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .step {
+            margin-bottom: 20px;
+        }
+
+        .next-step {
+            text-align: right;
+            margin-top: 15px;
+        }
+
+        #completion-message {
+            padding: 20px;
+            background-color: #e7f7ed;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #28a745;
+        }
+
+        .portfolio-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+
+        .progress-bar {
+            height: 20px;
+            background-color: #4a90e2;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s;
+            text-align: center;
+            color: white;
+        }
+
+        .home-button {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Embracing Failure: Your Path to Growth</h1>
+
+    <div class="container">
+        <div class="quote">
+            "Failure is simply the opportunity to begin again, this time more intelligently." — Henry Ford
+        </div>
+
+        <p>Welcome to this interactive exercise designed to help you transform how you view failure. Through reflection,
+            reframing, and visualization, you'll discover how failures can become powerful stepping stones toward
+            success.</p>
+
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar" style="width: 0%">0%</div>
+        </div>
+    </div>
+
+    <!-- Step 1: Introduction to Failure Mindset -->
+    <div id="step1" class="container step">
+        <h2>Step 1: Understanding Your Relationship with Failure</h2>
+
+        <p>Before we begin, take a moment to reflect on how you currently view failure. Select the statement that best
+            describes your current mindset:</p>
+
+        <div>
+            <input type="radio" id="mindset1" name="mindset" value="fixed">
+            <label for="mindset1">Failure is evidence of my limitations and should be avoided.</label>
+        </div>
+
+        <div>
+            <input type="radio" id="mindset2" name="mindset" value="transitioning">
+            <label for="mindset2">I know failure can teach me things, but it still feels terrible when it
+                happens.</label>
+        </div>
+
+        <div>
+            <input type="radio" id="mindset3" name="mindset" value="growth">
+            <label for="mindset3">I see failure as a necessary part of learning and growth.</label>
+        </div>
+
+        <div class="next-step">
+            <button onclick="nextStep(1, 2)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Step 2: Reflect on a Recent Failure -->
+    <div id="step2" class="container step hidden">
+        <h2>Step 2: Reflect on a Recent Failure</h2>
+
+        <p>Think about a recent experience where you feel you failed or didn't meet expectations (your own or others).
+            Describe what happened:</p>
+
+        <textarea id="failure-description"
+            placeholder="Describe what happened, how you felt, and why you consider it a failure..."></textarea>
+
+        <div class="next-step">
+            <button onclick="nextStep(2, 3)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Step 3: Reframing Exercise -->
+    <div id="step3" class="container step hidden">
+        <h2>Step 3: Reframing Your Experience</h2>
+
+        <p>Now, let's reframe this experience. Answer these questions:</p>
+
+        <div>
+            <label for="lessons">What lessons or insights did this experience provide?</label>
+            <textarea id="lessons"
+                placeholder="What did you learn about yourself, the situation, or others?"></textarea>
+        </div>
+
+        <div>
+            <label for="skills">What skills or strengths did you develop through this challenge?</label>
+            <textarea id="skills" placeholder="Examples: resilience, patience, technical knowledge, etc."></textarea>
+        </div>
+
+        <div>
+            <label for="future">How might this experience help you succeed in the future?</label>
+            <textarea id="future" placeholder="How will what you've learned influence future actions?"></textarea>
+        </div>
+
+        <div class="next-step">
+            <button onclick="nextStep(3, 4)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Step 4: Inspiring Failure Stories -->
+    <div id="step4" class="container step hidden">
+        <h2>Step 4: Famous Failure Stories</h2>
+
+        <p>You're not alone. Many successful people experienced significant failures on their path to success:</p>
+
+        <div class="story">
+            <h3>J.K. Rowling</h3>
+            <p>Before Harry Potter became a global phenomenon, J.K. Rowling was a single mother living on welfare. Her
+                first Harry Potter manuscript was rejected by 12 publishers before being accepted. She later said,
+                "Failure gave me an inner security that I had never attained by passing examinations. Failure taught me
+                things about myself that I could have learned no other way."</p>
+        </div>
+
+        <div class="story">
+            <h3>Thomas Edison</h3>
+            <p>When working on the light bulb, Edison made over 1,000 unsuccessful attempts. When asked about his
+                failures, he famously said, "I have not failed. I've just found 10,000 ways that won't work." Each
+                "failure" brought him one step closer to success.</p>
+        </div>
+
+        <div class="story">
+            <h3>Michael Jordan</h3>
+            <p>"I've missed more than 9,000 shots in my career. I've lost almost 300 games. 26 times, I've been trusted
+                to take the game-winning shot and missed. I've failed over and over and over again in my life. And that
+                is why I succeed."</p>
+        </div>
+
+        <div>
+            <label for="inspiration">Which of these stories resonates with you most, and why?</label>
+            <textarea id="inspiration" placeholder="Share your thoughts..."></textarea>
+        </div>
+
+        <div class="next-step">
+            <button onclick="nextStep(4, 5)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Step 5: Building Your Failure Portfolio -->
+    <div id="step5" class="container step hidden">
+        <h2>Step 5: Create Your Failure Portfolio</h2>
+
+        <p>A "Failure Portfolio" celebrates your failures as valuable experiences that contributed to who you are today.
+            Add at least two entries:</p>
+
+        <div id="portfolio-entries">
+            <div class="portfolio-item">
+                <div>
+                    <label for="failure1">Failure Experience #1:</label>
+                    <input type="text" id="failure1" placeholder="Brief description of the failure">
+                </div>
+                <div>
+                    <label for="growth1">The Growth It Provided:</label>
+                    <textarea id="growth1" placeholder="How did this failure help you grow?"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <button onclick="addPortfolioEntry()">+ Add Another Failure</button>
+
+        <div class="next-step">
+            <button onclick="nextStep(5, 6)">Continue</button>
+        </div>
+    </div>
+
+    <!-- Step 6: Future Failure Visualization -->
+    <div id="step6" class="container step hidden">
+        <h2>Step 6: Visualizing "Failing Forward"</h2>
+
+        <p>Think about something you're currently afraid to try because you might fail. Let's visualize how you could
+            "fail forward" in this situation:</p>
+
+        <div>
+            <label for="fear">What are you afraid to try?</label>
+            <input type="text" id="fear" placeholder="E.g., applying for a promotion, learning a new skill, etc.">
+        </div>
+
+        <div>
+            <label for="visualization">Imagine you try and things don't go as planned. How specifically could you use
+                that experience to grow and eventually succeed?</label>
+            <textarea id="visualization"
+                placeholder="Describe how you would learn from this potential setback and use it to move forward..."></textarea>
+        </div>
+
+        <p>Now, identify three small steps you could take toward this goal, where failing would be a manageable learning
+            opportunity:</p>
+
+        <div>
+            <label for="step1">Step 1 (Smallest challenge):</label>
+            <input type="text" id="small-step1">
+        </div>
+
+        <div>
+            <label for="step2">Step 2 (Medium challenge):</label>
+            <input type="text" id="small-step2">
+        </div>
+
+        <div>
+            <label for="step3">Step 3 (Bigger challenge):</label>
+            <input type="text" id="small-step3">
+        </div>
+
+        <div class="next-step">
+            <button onclick="nextStep(6, 7)">Complete Activity</button>
+        </div>
+    </div>
+
+    <!-- Completion Message -->
+    <div id="step7" class="container step hidden">
+        <div id="completion-message">
+            <h2>Congratulations!</h2>
+            <p>You've completed the Embracing Failure activity. Remember that every setback is an opportunity for growth
+                and learning. By reframing failures as stepping stones, you're developing a resilient growth mindset.
+            </p>
+            <p>Consider saving your reflections from this activity to revisit when you face challenges in the future.
+            </p>
+
+            <div class="quote">
+                "The only real mistake is the one from which we learn nothing." — Henry Ford
+            </div>
+
+            <button onclick="window.print()">Save Your Reflections</button>
+            <button onclick="resetActivity()">Start Over</button>
+        </div>
+    </div>
+
+    <a href="../../index.html" class="home-button">Return to Hub</a>
+
+    <script>
+        // Track current step
+        let currentProgress = 0;
+        const totalSteps = 6;
+
+        // Function to move to next step
+        function nextStep(current, next) {
+            // Validate current step if needed
+            if (current === 2 && document.getElementById('failure-description').value.trim() === '') {
+                alert('Please describe a failure experience before continuing.');
+                return;
+            }
+
+            // Hide current step
+            document.getElementById('step' + current).classList.add('hidden');
+
+            // Show next step
+            document.getElementById('step' + next).classList.remove('hidden');
+
+            // Update progress
+            currentProgress = (next - 1) / totalSteps * 100;
+            document.getElementById('progress-bar').style.width = currentProgress + '%';
+            document.getElementById('progress-bar').innerText = Math.round(currentProgress) + '%';
+
+            // Scroll to top of new section
+            window.scrollTo(0, 0);
+        }
+
+        // Function to add another entry to failure portfolio
+        function addPortfolioEntry() {
+            const portfolioEntries = document.getElementById('portfolio-entries');
+            const entryCount = portfolioEntries.getElementsByClassName('portfolio-item').length + 1;
+
+            const newEntry = document.createElement('div');
+            newEntry.className = 'portfolio-item';
+            newEntry.innerHTML = `
+                <div>
+                    <label for="failure${entryCount}">Failure Experience #${entryCount}:</label>
+                    <input type="text" id="failure${entryCount}" placeholder="Brief description of the failure">
+                </div>
+                <div>
+                    <label for="growth${entryCount}">The Growth It Provided:</label>
+                    <textarea id="growth${entryCount}" placeholder="How did this failure help you grow?"></textarea>
+                </div>
+            `;
+
+            portfolioEntries.appendChild(newEntry);
+        }
+
+        // Function to reset the activity
+        function resetActivity() {
+            for (let i = 2; i <= 7; i++) {
+                document.getElementById('step' + i).classList.add('hidden');
+            }
+            document.getElementById('step1').classList.remove('hidden');
+
+            // Clear form inputs
+            const textInputs = document.querySelectorAll('input[type="text"], textarea');
+            textInputs.forEach(input => {
+                input.value = '';
+            });
+
+            // Reset radio buttons
+            const radioInputs = document.querySelectorAll('input[type="radio"]');
+            radioInputs.forEach(input => {
+                input.checked = false;
+            });
+
+            // Reset progress bar
+            currentProgress = 0;
+            document.getElementById('progress-bar').style.width = '0%';
+            document.getElementById('progress-bar').innerText = '0%';
+
+            // Reset portfolio entries
+            const portfolioEntries = document.getElementById('portfolio-entries');
+            const firstEntry = portfolioEntries.firstElementChild;
+            portfolioEntries.innerHTML = '';
+            portfolioEntries.appendChild(firstEntry);
+
+            // Scroll back to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+
+</html>
