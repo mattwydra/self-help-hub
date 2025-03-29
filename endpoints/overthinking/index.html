@@ -1,3 +1,281 @@
-<h1>This page will eventually help you when you're overthinking</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breaking Free from Overthinking</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f7f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6b8cff, #a174ff);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #6b8cff;
+            border-bottom: 2px solid #6b8cff;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .tool-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .tool-title h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background-color: #e9ecff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .exercise {
+            background-color: #f1f5ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .exercise h4 {
+            margin-top: 0;
+            color: #6b8cff;
+        }
+
+        button {
+            background-color: #6b8cff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #5273e0;
+        }
+
+        .perspective-shift {
+            background-color: #fff5e6;
+            border-left: 4px solid #ffc266;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .quote {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+            margin: 30px auto;
+            font-size: 1.1rem;
+        }
+
+        .breathing-animation {
+            width: 100px;
+            height: 100px;
+            background-color: #a174ff;
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: breathe 5s infinite alternate;
+        }
+
+        @keyframes breathe {
+            0% {
+                transform: scale(0.8);
+                background-color: #a174ff;
+            }
+
+            100% {
+                transform: scale(1.2);
+                background-color: #6b8cff;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Breaking Free from Overthinking</h1>
+            <p>Tools to shift your perspective and find calm in the storm</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="quote">
+            "Overthinking is like being on a hamster wheel - lots of energy spent but you're not going anywhere. Today,
+            we step off that wheel."
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-title">
+                <div class="icon">🔄</div>
+                <h3>Reframe Your Thoughts</h3>
+            </div>
+            <p>Overthinking often creates catastrophic narratives. Let's practice turning those thoughts around:</p>
+
+            <div class="perspective-shift">
+                <p><strong>Instead of:</strong> "I keep making the same mistakes and I'll never improve."</p>
+                <p><strong>Try:</strong> "I notice patterns in my behavior that I can work on, which shows I'm
+                    self-aware and growing."</p>
+            </div>
+
+            <div class="perspective-shift">
+                <p><strong>Instead of:</strong> "Everyone at that party was judging me for what I said."</p>
+                <p><strong>Try:</strong> "People are generally focused on themselves, not analyzing my every word."</p>
+            </div>
+
+            <div class="exercise">
+                <h4>Try it yourself:</h4>
+                <p>Write down a thought you've been overthinking, then create two alternative perspectives:</p>
+                <textarea placeholder="My overthinking thought..."
+                    style="width: 100%; padding: 10px; height: 60px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+                <textarea placeholder="Alternative perspective 1..."
+                    style="width: 100%; padding: 10px; height: 60px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+                <textarea placeholder="Alternative perspective 2..."
+                    style="width: 100%; padding: 10px; height: 60px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ddd;"></textarea>
+            </div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-title">
+                <div class="icon">🧠</div>
+                <h3>The 5-5-5 Reality Check</h3>
+            </div>
+            <p>When your mind is racing with worst-case scenarios, try this grounding technique:</p>
+
+            <div class="exercise">
+                <h4>Ask yourself these questions:</h4>
+                <ol>
+                    <li><strong>Will this matter in 5 hours?</strong></li>
+                    <li><strong>Will this matter in 5 weeks?</strong></li>
+                    <li><strong>Will this matter in 5 years?</strong></li>
+                </ol>
+                <p>This simple exercise helps put your concerns in perspective and often reveals that many of our
+                    worries are temporary.</p>
+            </div>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-title">
+                <div class="icon">🌬️</div>
+                <h3>Breathing Reset</h3>
+            </div>
+            <p>Overthinking creates physical tension. Follow this breathing animation for 1 minute to break the cycle:
+            </p>
+
+            <div class="breathing-animation"></div>
+            <p style="text-align: center;">Breathe in as the circle expands. Breathe out as it contracts.</p>
+
+            <p>Research shows that controlled breathing activates your parasympathetic nervous system, which helps calm
+                your mind and reduce overthinking.</p>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-title">
+                <div class="icon">🔍</div>
+                <h3>The Observer Technique</h3>
+            </div>
+            <p>Step outside your thoughts by becoming an observer:</p>
+
+            <div class="exercise">
+                <h4>Try this now:</h4>
+                <ol>
+                    <li>Imagine watching your thoughts like clouds passing in the sky</li>
+                    <li>Notice each thought without judging it or attaching to it</li>
+                    <li>Say to yourself: "I notice I'm having the thought that..." before each worry</li>
+                    <li>Remember: You are not your thoughts. You are the observer of your thoughts.</li>
+                </ol>
+            </div>
+
+            <button>Start 2-Minute Observer Practice</button>
+        </div>
+
+        <div class="tool-card">
+            <div class="tool-title">
+                <div class="icon">📝</div>
+                <h3>Thought Dump & Transform</h3>
+            </div>
+            <p>Sometimes overthinking happens because we're trying to hold too much in our heads:</p>
+
+            <div class="exercise">
+                <h4>The process:</h4>
+                <ol>
+                    <li><strong>Dump:</strong> Write everything you're overthinking about for 3 minutes without stopping
+                    </li>
+                    <li><strong>Circle:</strong> Which of these thoughts are actually in your control?</li>
+                    <li><strong>Transform:</strong> For each circled thought, write one small action you could take</li>
+                    <li><strong>Release:</strong> For thoughts not in your control, practice saying "I release the need
+                        to control this"</li>
+                </ol>
+            </div>
+
+            <button>Start Guided Thought Dump</button>
+        </div>
+
+        <h2>Remember</h2>
+        <p>Overthinking is a habit, not a personality trait. Like any habit, it can be changed with practice and
+            patience. The storm in your mind is temporary, and you already have everything you need to find calm within
+            it.</p>
+
+        <div class="quote">
+            "You wouldn't worry so much about what others think of you if you realized how seldom they do." — Eleanor
+            Roosevelt
+        </div>
+    </div>
+</body>
+
+</html>
