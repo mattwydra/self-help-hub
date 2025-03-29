@@ -1,3 +1,433 @@
-<h1>This page will eventually help you to deal with your parents</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating Parent Relationships</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #42b883, #347474);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 12px 24px;
+            background-color: #e6f2ef;
+            border-radius: 30px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #347474;
+            transition: all 0.3s ease;
+        }
+        .tab:hover, .tab.active {
+            background-color: #42b883;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .strategy-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .strategy-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .strategy-header h3 {
+            margin: 0;
+            color: #347474;
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background-color: #e6f2ef;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+        .practice-box {
+            background-color: #f0f7f4;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+        .practice-box h4 {
+            margin-top: 0;
+            color: #42b883;
+        }
+        .example-dialog {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        .example-dialog .parent {
+            color: #d35400;
+            font-weight: bold;
+        }
+        .example-dialog .you {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        button {
+            background-color: #42b883;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #347474;
+        }
+        .quote {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            max-width: 600px;
+            margin: 30px auto;
+            font-size: 1.1rem;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+        .affirmation {
+            background: linear-gradient(135deg, #f5f7fa, #e6f2ef);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: #347474;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin: 30px 0;
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            position: absolute;
+            height: 100%;
+            background: linear-gradient(90deg, #347474, #42b883);
+            border-radius: 10px;
+            width: 0;
+            transition: width 2s ease;
+        }
+        .progress-text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Navigating Parent Relationships</h1>
+            <p class="subtitle">Finding your peace while dealing with challenging family dynamics</p>
+        </div>
+    </header>
 
-<link rel="stylesheet" href="../styles.css" />
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('boundaries')">Setting Boundaries</div>
+            <div class="tab" onclick="showTab('communication')">Effective Communication</div>
+            <div class="tab" onclick="showTab('independence')">Building Independence</div>
+            <div class="tab" onclick="showTab('emotional')">Emotional Management</div>
+            <div class="tab" onclick="showTab('perspective')">Gaining Perspective</div>
+        </div>
+
+        <div id="boundaries" class="tab-content active">
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <div class="icon">🛡️</div>
+                    <h3>Creating Healthy Boundaries</h3>
+                </div>
+                <p>Boundaries aren't walls—they're gates that you control. They help protect your mental health while maintaining relationships.</p>
+                
+                <div class="practice-box">
+                    <h4>Boundary-Setting Script</h4>
+                    <p>Use this three-part formula to set clear boundaries:</p>
+                    <ol>
+                        <li><strong>Name the behavior:</strong> "When you critique my career choices..."</li>
+                        <li><strong>Express how it affects you:</strong> "...it makes me feel like my judgment isn't trusted or respected."</li>
+                        <li><strong>State your boundary:</strong> "I'd like to ask that we don't discuss my career unless I bring it up."</li>
+                    </ol>
+                </div>
+                
+                <div class="example-dialog">
+                    <p><span class="parent">Parent:</span> "Why aren't you applying to law school? You're wasting your potential in that creative field."</p>
+                    <p><span class="you">You:</span> "When you question my career choices, it makes me feel like my judgment isn't valued. I've put a lot of thought into this path, and I need you to respect that this is my decision to make. I'd appreciate if we could talk about other topics instead."</p>
+                </div>
+                
+                <p><strong>Remember:</strong> You may need to reinforce boundaries multiple times. Be consistent and calm when doing so.</p>
+                
+                <button onclick="showBoundaryWorksheet()">Create Your Boundary Plan</button>
+            </div>
+        </div>
+
+        <div id="communication" class="tab-content">
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <div class="icon">🗣️</div>
+                    <h3>Non-Confrontational Communication</h3>
+                </div>
+                <p>How you say something is often as important as what you say. These techniques can help reduce defensiveness and open authentic dialogue.</p>
+                
+                <div class="practice-box">
+                    <h4>The "I Feel" Method</h4>
+                    <p>Instead of accusatory statements, try:</p>
+                    <ul>
+                        <li><strong>Avoid:</strong> "You always embarrass me in front of my friends."</li>
+                        <li><strong>Try instead:</strong> "I feel uncomfortable when comments about my childhood are shared with my friends. Those stories are personal to me."</li>
+                    </ul>
+                </div>
+                
+                <div class="example-dialog">
+                    <p><span class="parent">Parent:</span> "Why don't you ever call us? Don't you care about family anymore?"</p>
+                    <p><span class="you">You:</span> "I understand you want to hear from me more often. I care deeply about our family, and sometimes I get overwhelmed with my current responsibilities. Could we schedule a regular call every Sunday evening? That would help me stay connected while managing everything else."</p>
+                </div>
+                
+                <div class="practice-box">
+                    <h4>Active Listening Exchange</h4>
+                    <p>Propose this exercise with your parent:</p>
+                    <ol>
+                        <li>Each person gets 3 minutes to share their perspective without interruption</li>
+                        <li>The listener then paraphrases what they heard before responding</li>
+                        <li>Switch roles and repeat</li>
+                    </ol>
+                    <p>This slows down heated conversations and ensures both sides feel heard.</p>
+                </div>
+                
+                <button>Practice Dialogue Scenarios</button>
+            </div>
+        </div>
+
+        <div id="independence" class="tab-content">
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <div class="icon">🦅</div>
+                    <h3>Cultivating Financial & Emotional Independence</h3>
+                </div>
+                <p>Independence creates leverage in any relationship. The less you depend on your parents for your basic needs, the more equal the relationship becomes.</p>
+                
+                <div class="practice-box">
+                    <h4>Independence Inventory</h4>
+                    <p>Rate your independence in these areas (1-10):</p>
+                    <ul>
+                        <li>Financial support</li>
+                        <li>Housing</li>
+                        <li>Decision-making</li>
+                        <li>Emotional validation</li>
+                        <li>Problem-solving</li>
+                    </ul>
+                    <p>Focus on developing your lowest areas first.</p>
+                </div>
+                
+                <p><strong>Financial Steps:</strong></p>
+                <ul>
+                    <li>Create a realistic budget and stick to it</li>
+                    <li>Build an emergency fund (aim for 3-6 months of expenses)</li>
+                    <li>If receiving financial help, create a clear plan to decrease it gradually</li>
+                </ul>
+                
+                <p><strong>Emotional Steps:</strong></p>
+                <ul>
+                    <li>Build a diverse support network beyond family</li>
+                    <li>Develop self-validation practices (journaling, affirmations)</li>
+                    <li>Learn to sit with discomfort when parents disapprove</li>
+                </ul>
+                
+                <div class="affirmation">
+                    "My worth is not determined by my parents' approval. I have the right to chart my own course."
+                </div>
+                
+                <button>Create Independence Roadmap</button>
+            </div>
+        </div>
+
+        <div id="emotional" class="tab-content">
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <div class="icon">🧘</div>
+                    <h3>Managing Your Emotional Responses</h3>
+                </div>
+                <p>You can't control your parents' behavior, but you can control how you respond. These techniques help maintain your emotional balance during challenging interactions.</p>
+                
+                <div class="practice-box">
+                    <h4>The PAUSE Method</h4>
+                    <ol>
+                        <li><strong>P</strong> - Physically step back or take a deep breath</li>
+                        <li><strong>A</strong> - Acknowledge your feelings without judgment</li>
+                        <li><strong>U</strong> - Understand your triggers (what specific words or topics set you off?)</li>
+                        <li><strong>S</strong> - Select your response intentionally rather than reacting</li>
+                        <li><strong>E</strong> - Engage or exit based on what's healthiest in the moment</li>
+                    </ol>
+                </div>
+                
+                <div class="example-dialog">
+                    <p><span class="parent">Parent:</span> "Your brother never gives us this much trouble. Why can't you be more like him?"</p>
+                    <p><span class="you">You (internal PAUSE process):</span> "I notice I'm feeling angry and hurt. Comparisons are a trigger for me. I can choose to respond calmly or take a break."</p>
+                    <p><span class="you">You (external response):</span> "I understand you're frustrated. I need to take a short walk, and we can continue this conversation in 15 minutes when I'm calmer."</p>
+                </div>
+                
+                <p><strong>Quick Emotional Regulation Techniques:</strong></p>
+                <ul>
+                    <li><strong>5-5-5 Breathing:</strong> Inhale for 5 counts, hold for 5, exhale for 5</li>
+                    <li><strong>Sensory grounding:</strong> Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, 1 you can taste</li>
+                    <li><strong>Physical reset:</strong> Excuse yourself to splash cold water on your face or take a brief walk</li>
+                </ul>
+                
+                <button>Practice Emotional Regulation</button>
+            </div>
+        </div>
+
+        <div id="perspective" class="tab-content">
+            <div class="strategy-card">
+                <div class="strategy-header">
+                    <div class="icon">🔭</div>
+                    <h3>The Bigger Picture: This Is Temporary</h3>
+                </div>
+                <p>Even the most difficult parent relationships change over time. This perspective can help you navigate the present with more resilience.</p>
+                
+                <div class="progress-container" onclick="animateProgress()">
+                    <div class="progress-bar" id="lifeProgress"></div>
+                    <div class="progress-text">Click to see your life timeline</div>
+                </div>
+                
+                <p>The typical parent-child relationship goes through several phases:</p>
+                <ul>
+                    <li><strong>Complete dependence</strong> (childhood)</li>
+                    <li><strong>Growing independence with resistance</strong> (adolescence/young adulthood) ← You are likely here</li>
+                    <li><strong>Adult-to-adult relationship</strong> (mid-adulthood)</li>
+                    <li><strong>Potential role reversal</strong> (later life)</li>
+                </ul>
+                
+                <div class="practice-box">
+                    <h4>Growth Reflection</h4>
+                    <p>Consider these questions:</p>
+                    <ul>
+                        <li>How might your current struggles be shaping your strength, resilience, or compassion?</li>
+                        <li>What have you learned about yourself through these challenges?</li>
+                        <li>What boundaries or communication skills are you developing that will serve all your relationships?</li>
+                    </ul>
+                </div>
+                
+                <div class="affirmation">
+                    "Every challenge with my parents is developing muscles I'll use throughout my life. This difficult season is not my entire story."
+                </div>
+                
+                <div class="quote">
+                    "Sometimes it takes darkness and the sweet confinement of your aloneness to learn that anything or anyone that does not bring you alive is too small for you." — David Whyte
+                </div>
+                
+                <p><strong>Remember:</strong> Your parents' behavior is often a reflection of their own unresolved issues and limitations, not an accurate assessment of your worth or potential.</p>
+                
+                <button>Create Future Vision Board</button>
+            </div>
+        </div>
+
+        <h2>Resources</h2>
+        <p>Remember that if your relationship with your parents involves abuse or consistently threatens your wellbeing, it's important to prioritize your safety and mental health. Consider these additional resources:</p>
+        <ul>
+            <li>Free or low-cost therapy options through schools, community centers, or telehealth services</li>
+            <li>Support groups for adult children navigating difficult parent relationships</li>
+            <li>Books on boundary-setting and family dynamics</li>
+        </ul>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(function(content) {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Add active class to the clicked tab
+            event.target.classList.add('active');
+        }
+        
+        function showBoundaryWorksheet() {
+            alert("Boundary worksheet would open here in the actual application");
+        }
+        
+        function animateProgress() {
+            const progressBar = document.getElementById('lifeProgress');
+            progressBar.style.width = '25%';
+            document.querySelector('.progress-text').innerText = 'Current challenges = ~25% of your life journey';
+        }
+    </script>
+</body>
+</html>
