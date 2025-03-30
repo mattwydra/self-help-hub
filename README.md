@@ -101,7 +101,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 - "Evidence Collection" - Structured exercise to document personal achievements and positive qualities, with prompts to overcome dismissing their significance.
 - "Boundaries Visualization" - Interactive tool to help users visualize and articulate their needs and boundaries in different contexts.
 
-### Failure 
+### [Failure](https://mattwydra.github.io/self-help-hub/endpoints/failure/index.html) 
 
 1. **Failure Reframing Exercise**: Have users write about a recent failure, then guide them through reframing it as a learning opportunity with specific prompts.
 
