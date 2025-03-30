@@ -138,3 +138,12 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
    - Save and print functionality
    - Responsive design that works on various screen sizes
    - Text areas for goal descriptions and importance reflection
+
+### Anger
+### Lost
+### Love
+### Meditation
+### Overthinking
+### Parents
+### Strength
+### Lack of motivation
