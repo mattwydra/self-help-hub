@@ -113,7 +113,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 
 5. **Failure Visualization**: Guide users through visualizing "failing forward" in a situation they're anxious about.
 
-### Goal Setting
+### [Goal Setting](https://mattwydra.github.io/self-help-hub/endpoints/goal_setting/index.html)
 
 1. **Hierarchical Goal Structure**
    - Users can set 3-year goals as their vision
