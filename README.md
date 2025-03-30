@@ -91,7 +91,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 2. **Create-Don't-Consume Challenge:**
    Simple prompts for quick creative activities that take under 5 minutes but shift the user from passive consumption to active creation.
 
-### Egoism
+### [Egoism](https://mattwydra.github.io/self-help-hub/endpoints/egoism/index.html)
 
 **For those who need to tone it down:**
 - "Perspective Shift" - Interactive scenario where users read a situation, write their reaction, then are prompted to rewrite it from three different perspectives.
