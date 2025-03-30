@@ -83,7 +83,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 3. **"Just This" Mindfulness:**
    A guided exercise focused on completing just one small task with full presence. Instead of thinking about everything that needs doing, the activity guides users to focus completely on the sensory experience of one simple action like washing a single dish or folding one piece of clothing.
 
-### Boredom
+### [Boredom](https://mattwydra.github.io/self-help-hub/endpoints/boredom/index.html)
 
 1. **Beyond Minigames:**
    "Curiosity Roulette" - A wheel that randomly selects unusual questions or tiny research projects designed to spark interest and learning. Examples: "Find out why flamingos are pink" or "Learn one phrase in a new language."
