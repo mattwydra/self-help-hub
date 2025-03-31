@@ -1,3 +1,335 @@
-<h1>This page will eventually help you to get over that overwhelming feeling of regret</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Hub - Overcoming Regret</title>
+    <style>
+        :root {
+            --primary: #3a7bd5;
+            --primary-dark: #2c5fb1;
+            --secondary: #4CAF50;
+            --secondary-dark: #3e8e41;
+            --tertiary: #8E44AD;
+            --tertiary-dark: #7D3C98;
+            --background: #f9f9f9;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --light-text: #777777;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .subheading {
+            color: var(--light-text);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-height: 500px;
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote::before {
+            content: "";
+            font-size: 4rem;
+            position: absolute;
+            left: 10px;
+            top: -15px;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-author {
+            display: block;
+            text-align: right;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .exercise {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .exercise-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        /* Animation for content */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation bar */
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #e9e9e9;
+        }
+
+        .nav-link.current {
+            background-color: var(--primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Wellness Hub</h1>
+            <p class="subheading">Tools to help you navigate difficult emotions and grow</p>
+        </header>
+
+        <div class="nav">
+            <a href="#" class="nav-link current">Overcoming Regret</a>
+            <a href="revenge.html" class="nav-link">Transforming Revenge</a>
+        </div>
+
+        <div class="content fade-in">
+            <h2>Understanding & Overcoming Regret</h2>
+
+            <div class="section">
+                <div class="card">
+                    <div class="section-title">The Two Faces of Regret</div>
+                    <p>Regret is a complex emotion that can either propel us forward or hold us back:</p>
+                    <ul>
+                        <li><strong>Constructive Reflection</strong> - Using past mistakes as valuable learning
+                            opportunities that guide better future decisions</li>
+                        <li><strong>Destructive Dwelling</strong> - Getting stuck in a cycle of self-criticism and
+                            shame that prevents personal growth</li>
+                    </ul>
+                    <p>The key is recognizing which form your regret is taking and redirecting it toward growth.</p>
+                </div>
+
+                <div class="quote">
+                    "Regret is insight that comes a day too late."
+                    <span class="quote-author">— Lily Tomlin</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">David Goggins' Method for Conquering Regret</div>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Face It</div>
+                        <p>Confront your regret directly instead of avoiding it. Acknowledge what happened, your
+                            role in it, and the emotions it brings up. Facing regret requires courage, but it's the
+                            essential first step toward healing.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Fix It</div>
+                        <p>Take actionable steps to address what went wrong. This might mean making amends, changing
+                            behavior patterns, or developing new skills. Not everything can be fixed in the
+                            traditional sense, but you can always work toward making peace with the past.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Make It Better</div>
+                        <p>Transform the experience into something that strengthens you. Use the lessons learned to
+                            create positive change in your life and possibly in others' lives. This is where regret
+                            becomes a catalyst for growth rather than a burden.</p>
+                    </div>
+                </div>
+
+                <div class="quote">
+                    "You can't go back and change the beginning, but you can start where you are and change the
+                    ending."
+                    <span class="quote-author">— C.S. Lewis</span>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="exercise-title">Practical Exercise: Regret Reframing</div>
+                <p>Take 10 minutes to work through this process:</p>
+                <ol>
+                    <li><strong>Write it down</strong> - Describe a regret you're currently experiencing</li>
+                    <li><strong>Extract the lesson</strong> - What could this experience teach you?</li>
+                    <li><strong>Identify one action</strong> - What's one thing you can do today that applies this
+                        lesson?</li>
+                    <li><strong>Commit to growth</strong> - How will you use this to become stronger?</li>
+                </ol>
+                <p>Repeat this exercise whenever regret surfaces, gradually transforming it from a source of pain to
+                    a source of wisdom.</p>
+            </div>
+
+            <a href="#" class="button">Download Regret Worksheet</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Mental Wellness Hub - Tools for Emotional Growth and Healing</p>
+        <p>Remember: If you're struggling significantly with these emotions, consider reaching out to a mental health
+            professional.</p>
+    </footer>
+</body>
+
+</html>
