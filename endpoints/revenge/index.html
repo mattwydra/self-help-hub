@@ -1,8 +1,358 @@
-<div class="video-container"
-    style="position: relative; margin: 30px 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@thecloakedmotivation/video/7392225927796673822"
-        data-video-id="7392225927796673822" style="max-width: 100%; min-width: 325px;">
-        <section></section>
-    </blockquote>
-    <script async src="https://www.tiktok.com/embed.js"></script>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Wellness Hub - Transforming Revenge</title>
+    <style>
+        :root {
+            --primary: #3a7bd5;
+            --primary-dark: #2c5fb1;
+            --secondary: #4CAF50;
+            --secondary-dark: #3e8e41;
+            --tertiary: #8E44AD;
+            --tertiary-dark: #7D3C98;
+            --background: #f9f9f9;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --light-text: #777777;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--tertiary);
+            margin-bottom: 10px;
+        }
+
+        .subheading {
+            color: var(--light-text);
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .content {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-height: 500px;
+        }
+
+        h2 {
+            color: var(--tertiary);
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--tertiary);
+            margin-bottom: 15px;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--tertiary);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 15px;
+            background-color: #f3f3f3;
+            border-radius: 8px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .quote::before {
+            content: "";
+            font-size: 4rem;
+            position: absolute;
+            left: 10px;
+            top: -15px;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-author {
+            display: block;
+            text-align: right;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .step {
+            display: flex;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            background-color: var(--tertiary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .exercise {
+            background-color: #f7f0ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .exercise-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--tertiary);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--tertiary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: var(--tertiary-dark);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        /* Animation for content */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Navigation bar */
+        .nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-link {
+            padding: 10px 20px;
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--text);
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link:hover {
+            background-color: #e9e9e9;
+        }
+
+        .nav-link.current {
+            background-color: var(--tertiary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Mental Wellness Hub</h1>
+            <p class="subheading">Tools to help you navigate difficult emotions and grow</p>
+        </header>
+
+        <div class="nav">
+            <a href="index.html" class="nav-link">Overcoming Regret</a>
+            <a href="#" class="nav-link current">Transforming Revenge</a>
+        </div>
+
+        <div class="content fade-in">
+            <h2>Transforming Revenge into Personal Power</h2>
+
+            <div class="section">
+                <div class="card">
+                    <div class="section-title">The Revenge Paradox</div>
+                    <p>Revenge is a natural human response to perceived wrongs, but it contains an inherent paradox:
+                    </p>
+                    <ul>
+                        <li><strong>Short-term fuel</strong> - Can provide powerful motivation and energy</li>
+                        <li><strong>Long-term poison</strong> - Eventually damages your wellbeing and keeps you
+                            tethered to pain</li>
+                    </ul>
+                    <p>The challenge is using this energy constructively while gradually transforming it into
+                        something healthier and more sustainable.</p>
+                </div>
+
+                <div class="quote">
+                    "Living well is the best revenge."
+                    <span class="quote-author">— George Herbert</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">The Revenge to Self-Empowerment Journey</div>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Acknowledge the Fuel</div>
+                        <p>Recognize that revenge-based motivation can be powerful in the short term. Instead of
+                            denying these feelings, acknowledge them without judgment. The desire to prove someone
+                            wrong can initially drive tremendous action.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Channel the Energy</div>
+                        <p>Direct this emotional energy toward constructive goals that truly matter to you. When you
+                            feel the revenge impulse, ask: "How can I use this energy to build something meaningful
+                            rather than to destroy?"</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Begin the Emotional Processing</div>
+                        <p>While channeling the energy, simultaneously work through the underlying hurt. This might
+                            involve journaling, therapy, or honest conversations with trusted friends. Processing
+                            emotions doesn't mean the motivation disappears—it transforms.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Shift to Self-Focused Goals</div>
+                        <p>Gradually reframe your goals to be about your growth rather than others' perceptions.
+                            Notice when you're doing something to "show them" and consciously pivot to doing it
+                            because it aligns with your values and aspirations.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-title">Release Their Influence</div>
+                        <p>The final transformation occurs when you realize success isn't about proving others
+                            wrong—it's about proving yourself right. True empowerment comes when others' opinions,
+                            whether positive or negative, no longer dictate your choices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <div class="exercise-title">Practical Exercise: Energy Redirection</div>
+                <p>When you notice revenge motivating you:</p>
+                <ol>
+                    <li><strong>Identify the emotion</strong> - Name the specific feeling behind the revenge desire
+                        (hurt, betrayal, humiliation)</li>
+                    <li><strong>Honor the energy</strong> - Acknowledge the power it provides without judgment</li>
+                    <li><strong>Set aligned goals</strong> - Create objectives that benefit you regardless of the
+                        other person's awareness</li>
+                    <li><strong>Find the deeper why</strong> - Ask what pursuing this goal would give you that truly
+                        matters</li>
+                    <li><strong>Create a mantra</strong> - Develop a personal phrase that shifts focus from them to
+                        you (e.g., "I build for my future, not their regret")</li>
+                </ol>
+            </div>
+
+            <div class="quote">
+                "Success is the best revenge because it doesn't just change other people's perception of you. More
+                importantly, it changes your perception of yourself."
+                <span class="quote-author">— Unknown</span>
+            </div>
+
+            <a href="#" class="button">Download Transformation Guide</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Mental Wellness Hub - Tools for Emotional Growth and Healing</p>
+        <p>Remember: If you're struggling significantly with these emotions, consider reaching out to a mental health
+            professional.</p>
+    </footer>
+</body>
+
+</html>
