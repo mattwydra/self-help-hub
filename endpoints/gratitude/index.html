@@ -1,3 +1,475 @@
-<h1>This page will eventually help you with being more grateful</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<link rel="stylesheet" href="../styles.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Power of Gratitude | Self-Help Hub</title>
+    <style>
+        :root {
+            --primary-color: #2a9d8f;
+            --secondary-color: #e9c46a;
+            --accent-color: #f4a261;
+            --light-bg: #f8f9fa;
+            --dark-text: #264653;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 2rem;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            background-image: url('/api/placeholder/800/300');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .practices-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .practice {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .practice-number {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .practice-content {
+            flex-grow: 1;
+        }
+
+        .quote-box {
+            background-color: var(--secondary-color);
+            color: var(--dark-text);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-style: italic;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .quote-box::before {
+            content: "" ";
+ font-size: 5rem;
+            position: absolute;
+            left: 10px;
+            top: -15px;
+            opacity: 0.3;
+        }
+
+        .journal-template {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .journal-prompt {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .journal-lines {
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            margin: 1rem 0;
+        }
+
+        .challenge-box {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .science-section {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--accent-color);
+            padding: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+        }
+
+        .resources {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>The Power of Gratitude</h1>
+            <p class="subtitle">Finding joy in everyday moments, especially during difficult times</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero-image"></div>
+
+        <div class="info-card">
+            <h2>What Is Gratitude?</h2>
+            <p>Gratitude is more than just saying "thank you"—it's a powerful mindset that involves recognizing and
+                appreciating the positive aspects of life, even during challenging times. It's about acknowledging the
+                good things, big and small, and understanding that many of these things are gifts that we've received
+                from others or the world around us.</p>
+
+            <p>When we're struggling with mental health challenges, our brains often become hyper-focused on what's
+                wrong, what's missing, or what could go wrong in the future. Gratitude works as a natural antidote to
+                these negative thought patterns by intentionally shifting our attention to what's going well and what we
+                do have.</p>
+
+            <p>Research shows that a regular gratitude practice doesn't just feel good in the moment—it actually rewires
+                our brains over time, making positive thinking more automatic and creating lasting improvements in
+                mental well-being.</p>
+        </div>
+
+        <div class="quote-box">
+            "Gratitude turns what we have into enough, and more. It turns denial into acceptance, chaos into order,
+            confusion into clarity... it makes sense of our past, brings peace for today, and creates a vision for
+            tomorrow." — Melody Beattie
+        </div>
+
+        <h2>The Science-Backed Benefits of Gratitude</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">❤️</div>
+                <h3>Improved Mental Health</h3>
+                <p>Regular gratitude practice reduces symptoms of depression and anxiety by up to 35% according to
+                    research studies.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">😴</div>
+                <h3>Better Sleep</h3>
+                <p>People who practice gratitude before bed fall asleep faster, sleep longer, and report better sleep
+                    quality.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🧠</div>
+                <h3>Reduced Stress</h3>
+                <p>Gratitude lowers cortisol (stress hormone) levels by up to 23% and activates the brain's reward
+                    pathways.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💪</div>
+                <h3>Physical Health</h3>
+                <p>Grateful people have stronger immune systems, lower blood pressure, and report fewer physical
+                    symptoms.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3>Stronger Relationships</h3>
+                <p>Expressing gratitude strengthens bonds, increases empathy, and reduces relationship conflicts.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">⏱️</div>
+                <h3>Increased Resilience</h3>
+                <p>Gratitude helps people recover more quickly from trauma, stress, and adversity.</p>
+            </div>
+        </div>
+
+        <div class="science-section">
+            <h2>The Neuroscience of Gratitude</h2>
+            <p>When we practice gratitude, our brains release dopamine and serotonin, neurotransmitters responsible for
+                our emotions of pleasure and happiness. This surge creates a natural high that reduces stress, increases
+                energy, and improves optimism.</p>
+
+            <p>MRI scans show that gratitude activates the medial prefrontal cortex, an area associated with learning
+                and decision making. Over time, this repeated activation strengthens neural pathways, making gratitude
+                more automatic and creating a positive feedback loop.</p>
+
+            <p>The most fascinating discovery? Our brains cannot focus on positive and negative information
+                simultaneously. By intentionally practicing gratitude, we're training our minds to prioritize positive
+                information, effectively crowding out negative thoughts and emotions.</p>
+        </div>
+
+        <div class="practices-section">
+            <h2>7 Simple Gratitude Practices</h2>
+
+            <div class="practice">
+                <div class="practice-number">1</div>
+                <div class="practice-content">
+                    <h3>The 3 Good Things Exercise</h3>
+                    <p>Each night before bed, write down three specific things that went well today and why they
+                        happened. Be as detailed as possible. Research shows doing this for just one week can increase
+                        happiness and decrease depressive symptoms for up to six months.</p>
+                </div>
+            </div>
+
+            <div class="practice">
+                <div class="practice-number">2</div>
+                <div class="practice-content">
+                    <h3>Gratitude Letters</h3>
+                    <p>Write a heartfelt letter to someone who has positively impacted your life but whom you've never
+                        properly thanked. Express specific ways they've helped you and how their actions affected your
+                        life. You can choose to send it or keep it private.</p>
+                </div>
+            </div>
+
+            <div class="practice">
+                <div class="practice-number">3</div>
+                <div class="practice-content">
+                    <h3>Mindful Appreciation Walk</h3>
+                    <p>Take a 10-minute walk with the sole purpose of noticing things to appreciate. Focus on different
+                        senses—beautiful sights, pleasant sounds, the feeling of sun or breeze on your skin. This
+                        combines the benefits of gratitude with mindfulness and physical activity.</p>
+                </div>
+            </div>
+
+            <div class="practice">
+                <div class="practice-number">4</div>
+                <div class="practice-content">
+                    <h3>Gratitude Jar</h3>
+                    <p>Keep a jar and small slips of paper nearby. Whenever something positive happens, write it down
+                        and add it to the jar. On difficult days, read through some of these notes as a reminder of good
+                        things in your life.</p>
+                </div>
+            </div>
+
+            <div class="practice">
+                <div class="practice-number">5</div>
+                <div class="practice-content">
+                    <h3>Gratitude Photography</h3>
+                    <p>Each day, take a photo of something you're grateful for. This trains your brain to actively look
+                        for positive aspects in your environment throughout the day, not just during a designated
+                        gratitude practice time.</p>
+                </div>
+            </div>
+
+            <div class="practice">
+                <div class="practice-number">6</div>
+                <div class="practice-content">
+                    <h3>Gratitude Meditation</h3>
+                    <p>Spend 5-10 minutes in meditation focusing on feelings of thankfulness. Begin with your breath,
+                        then expand to your body, your surroundings, people in your life, and opportunities you've been
+                        given.</p>
+                </div>
+            </div>
+
+            <div class="practice">
+                <div class="practice-number">7</div>
+                <div class="practice-content">
+                    <h3>The "What Went Well" Dinner Ritual</h3>
+                    <p>If you live with others, make sharing one thing you're grateful for a regular dinner ritual. This
+                        not only cultivates individual gratitude but creates a culture of appreciation within your
+                        household.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="journal-template">
+            <h2>Gratitude Journal Template</h2>
+            <p>Use these prompts to kickstart your gratitude practice:</p>
+
+            <div class="journal-prompt">
+                <p><strong>1. Three specific things I'm grateful for today are:</strong></p>
+                <div class="journal-lines"></div>
+                <div class="journal-lines"></div>
+                <div class="journal-lines"></div>
+            </div>
+
+            <div class="journal-prompt">
+                <p><strong>2. Someone who has positively impacted my life recently and why:</strong></p>
+                <div class="journal-lines"></div>
+            </div>
+
+            <div class="journal-prompt">
+                <p><strong>3. A challenge I'm facing that has hidden benefits or opportunities:</strong></p>
+                <div class="journal-lines"></div>
+            </div>
+
+            <div class="journal-prompt">
+                <p><strong>4. Something about my body or health I'm thankful for:</strong></p>
+                <div class="journal-lines"></div>
+            </div>
+
+            <div class="journal-prompt">
+                <p><strong>5. A small pleasure I enjoyed today:</strong></p>
+                <div class="journal-lines"></div>
+            </div>
+        </div>
+
+        <div class="challenge-box">
+            <h2>21-Day Gratitude Challenge</h2>
+            <p>Research shows it takes about 21 days to form a new habit. Commit to one of the gratitude practices above
+                for just 5 minutes each day for the next 21 days. Track your mood before and after to see the
+                difference!</p>
+            <p><strong>Download our free gratitude tracker to get started!</strong></p>
+        </div>
+
+        <div class="info-card">
+            <h2>Finding Gratitude During Difficult Times</h2>
+            <p>When you're struggling with depression, anxiety, grief, or trauma, gratitude can feel impossible or even
+                inappropriate. Here's how to approach gratitude during tough times:</p>
+
+            <ul>
+                <li><strong>Start incredibly small</strong> - Be grateful for a single breath, a moment without pain, or
+                    the fact that you're still here.</li>
+                <li><strong>Acknowledge the difficulty</strong> - Gratitude doesn't mean ignoring problems. Try: "Even
+                    though I'm struggling with _____, I can appreciate _____."</li>
+                <li><strong>Practice self-compassion first</strong> - Sometimes you need to validate your suffering
+                    before you can find space for gratitude.</li>
+                <li><strong>Focus on people, not circumstances</strong> - When life situations are difficult, shift
+                    focus to relationships and connections you value.</li>
+                <li><strong>Look for the lessons</strong> - Ask "What is this teaching me?" or "How might this be
+                    helping me grow?"</li>
+            </ul>
+
+            <p>Remember: Gratitude during hardship isn't about forcing positivity—it's about finding small lights in the
+                darkness that can help guide you through.</p>
+        </div>
+
+        <div class="testimonial">
+            "I started practicing gratitude during the darkest period of my life, after losing my job and going through
+            a divorce. At first, it felt fake and forced. But gradually, those small moments of appreciation became
+            lifelines. They didn't erase my pain, but they gave me just enough hope to keep going. A year later, I can
+            honestly say gratitude changed everything—not by changing my circumstances, but by changing how I
+            experienced them." — Michael, 42
+        </div>
+
+        <div class="resources">
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><strong>Books:</strong> "Thanks! How Practicing Gratitude Can Make You Happier" by Robert Emmons,
+                    "The Gratitude Diaries" by Janice Kaplan</li>
+                <li><strong>Apps:</strong> Gratitude Journal, ThankfulFor, Grateful, Presently</li>
+                <li><strong>Research:</strong> Greater Good Science Center at Berkeley</li>
+                <li><strong>Practices:</strong> Join our monthly gratitude circle (online or in-person)</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>"In the end, maybe it's wiser to surrender before the miraculous scope of human generosity and to just
+                keep saying thank you, forever and sincerely, for as long as we have voices." — Elizabeth Gilbert</p>
+            <p>© 2025 Self-Help Hub. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
