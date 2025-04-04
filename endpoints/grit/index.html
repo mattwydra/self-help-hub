@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grit: Finding Strength in the Struggle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #333333 0%, #000000 100%);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
+            color: #e63946;
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .quote {
+            font-style: italic;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-left: 4px solid #e63946;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .exercise {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border: 1px solid #333;
+        }
+
+        .exercise h3 {
+            color: #4eccff;
+            margin-bottom: 15px;
+        }
+
+        .exercise ol,
+        .exercise ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .exercise li {
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #303030 100%);
+            border-radius: 8px;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight-box h3 {
+            color: #e63946;
+            margin-bottom: 15px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #e63946;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c1121f;
+        }
+
+        .progress-container {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            height: 25px;
+            width: 100%;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: linear-gradient(90deg, #e63946 0%, #f94144 100%);
+            height: 100%;
+            border-radius: 8px;
+            width: 0;
+            transition: width 0.3s;
+        }
+
+        .progress-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #333333 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        /* Animation for the mantra button */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        #mantraText {
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 20px;
+            background-color: #1e1e1e;
+            margin-top: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>GRIT</h1>
+            <p>Finding strength in the struggle no one sees</p>
+        </header>
+
+        <div class="section">
+            <h2>The Reality Behind Every Success Story</h2>
+            <p>Every highlight reel you see - whether it's an athlete's victory, a CEO's success, or even a fictional
+                character like Rock Lee's impressive feats - hides thousands of hours of grueling, painful, and often
+                boring work.</p>
+
+            <p>The training montage might last 2 minutes on screen, but the actual journey takes years of showing up
+                when nobody's watching, pushing through pain, doubt, and exhaustion.</p>
+
+            <div class="quote">
+                "Grit is living life like it's a marathon, not a sprint."
+                <div class="quote-author">— Angela Duckworth</div>
+            </div>
+
+            <p>This page isn't about motivational fluff. It's about acknowledging the brutal reality of what it takes to
+                accomplish difficult things - and finding the strength to keep going anyway.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>What Grit Really Means</h3>
+            <p>Grit isn't just perseverance. It's the power to endure discomfort, boredom, and pain for something that
+                matters deeply to you. It's showing up even when:</p>
+            <ul>
+                <li>No one is watching or cheering you on</li>
+                <li>Progress feels painfully slow or non-existent</li>
+                <li>You're tired, discouraged, or in physical pain</li>
+                <li>Everyone else has given up or moved on</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>The Physical Act of "Gritting Your Teeth"</h2>
+            <p>There's wisdom in the physical metaphor of "gritting your teeth." When we clench our jaw in
+                determination, our body sends signals to our brain that we're ready to endure. It's a primal response
+                that says: "This is hard, but I'm harder."</p>
+
+            <div class="exercise">
+                <h3>Physical Anchoring Exercise</h3>
+                <p>When facing something difficult, try this:</p>
+                <ol>
+                    <li>Take a deep breath in through your nose</li>
+                    <li>Clench your jaw slightly (not enough to hurt)</li>
+                    <li>Tighten your core muscles</li>
+                    <li>Exhale slowly through your mouth</li>
+                    <li>Tell yourself: "I can endure more than I think I can"</li>
+                </ol>
+                <p>This physical ritual creates an anchor that reminds your body and mind that you've chosen this
+                    challenge and are committed to seeing it through.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>The Invisible Work</h2>
+            <p>No one sees the fighter who wakes up at 4 AM to train before work. No one applauds the student studying
+                while friends are partying. No one celebrates the parent who shows up day after day despite exhaustion.
+            </p>
+
+            <div class="image-placeholder">
+                [Image: Person training alone in empty gym before dawn]
+            </div>
+
+            <p>The work that ultimately defines us is largely invisible to others. It happens in quiet moments of choice
+                when easier options are always available.</p>
+
+            <div class="quote">
+                "The difference between who you are and who you want to be is what you do."
+                <div class="quote-author">— Unknown</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Building Your Grit Muscle</h2>
+            <p>Like physical strength, grit can be developed through deliberate practice and consistent effort.</p>
+
+            <div class="exercise">
+                <h3>The 5-Minute Rule</h3>
+                <p>When you don't want to do something important:</p>
+                <ol>
+                    <li>Commit to just 5 minutes of work</li>
+                    <li>After 5 minutes, decide whether to continue</li>
+                    <li>Often, starting is the hardest part</li>
+                </ol>
+                <p>This breaks the psychological barrier of resistance and builds the habit of starting despite
+                    discomfort.</p>
+            </div>
+
+            <div class="exercise">
+                <h3>Discomfort Training</h3>
+                <p>Regularly expose yourself to controlled discomfort:</p>
+                <ul>
+                    <li>Cold showers for 30 seconds</li>
+                    <li>Holding a difficult exercise position for 10 seconds longer than comfortable</li>
+                    <li>Fasting for a set period</li>
+                    <li>Working without distractions for increasingly longer periods</li>
+                </ul>
+                <p>These practices train your brain to tolerate discomfort and recognize that you can endure more than
+                    you think.</p>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <h3>Your Personal Grit Mantra</h3>
+            <p>Create a short, powerful phrase that resonates with you. Repeat it when facing challenges or wanting to
+                quit.</p>
+            <button id="mantraButton" class="pulse">Generate a Grit Mantra</button>
+            <div id="mantraText"></div>
+        </div>
+
+        <div class="section">
+            <h2>Tracking Your Grit Progress</h2>
+            <p>Building grit happens through consistent effort over time. Track your progress to see how far you've
+                come.</p>
+
+            <p><strong>Today's Grit Challenge:</strong> Do one thing today that you're avoiding because it's difficult.
+            </p>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar" style="width: 0%"></div>
+                <div class="progress-text">0%</div>
+            </div>
+
+            <button id="progressButton">I Completed Today's Challenge</button>
+        </div>
+
+        <div class="section">
+            <h2>When You Want to Quit</h2>
+            <p>Remember that quitting is always available to you. The power comes in choosing not to use that option.
+            </p>
+
+            <div class="quote">
+                "Pain is temporary. Quitting lasts forever."
+                <div class="quote-author">— Lance Armstrong</div>
+            </div>
+
+            <p>Instead of asking "How can I escape this discomfort?", ask "How can I endure this discomfort for just
+                five more minutes?"</p>
+
+            <p>Break the challenge into smaller pieces. Focus on the next step, not the entire journey.</p>
+        </div>
+
+        <footer>
+            Remember: The work is hard because it matters. Keep going.
+        </footer>
+    </div>
+
+    <script>
+        // Array of grit mantras
+        const mantras = [
+            "This pain is forging my strength.",
+            "I've survived 100% of my worst days.",
+            "I don't stop when I'm tired. I stop when I'm done.",
+            "The fire inside me burns brighter than the fire around me.",
+            "I am tougher than this challenge.",
+            "Pain is temporary. Giving up is permanent.",
+            "One more rep. One more hour. One more day.",
+            "I embrace the struggle that others avoid.",
+            "My persistence outweighs my doubt.",
+            "This is where champions are made - in the unseen hours."
+        ];
+
+        // Mantra button functionality
+        document.getElementById('mantraButton').addEventListener('click', function () {
+            const mantraText = document.getElementById('mantraText');
+            const randomMantra = mantras[Math.floor(Math.random() * mantras.length)];
+            mantraText.textContent = randomMantra;
+            mantraText.style.display = 'block';
+        });
+
+        // Progress button functionality
+        document.getElementById('progressButton').addEventListener('click', function () {
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.querySelector('.progress-text');
+
+            // Get current progress
+            let currentWidth = parseInt(progressBar.style.width) || 0;
+
+            // Increment progress
+            if (currentWidth < 100) {
+                currentWidth += 25;
+                progressBar.style.width = currentWidth + '%';
+                progressText.textContent = currentWidth + '%';
+
+                if (currentWidth === 100) {
+                    alert("Outstanding! You've completed today's grit challenge. Remember: consistency compounds over time.");
+                } else {
+                    alert("Progress recorded! Keep pushing.");
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
