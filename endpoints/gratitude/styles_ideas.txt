@@ -1,0 +1,75 @@
+Yes, that makes sense! You want to use the image as a background for the entire page with all content overlaid on top of it. Here's how you can accomplish this:
+
+```css
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    background-image: url('musashi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* Add this new class to create an overlay that makes content readable */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85); /* White with 85% opacity */
+    z-index: -1;
+}
+
+/* Remove the existing hero-image class or comment it out */
+/* .hero-image {
+    width: 473px;
+    height: 530px;
+    background-image: url('musashi.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+} */
+
+/* Make sure content containers have proper z-index */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+```
+
+What this does:
+1. Sets the Musashi image as the background for the entire body element
+2. Uses `background-attachment: fixed` to keep the image stationary while scrolling
+3. Creates a semi-transparent white overlay using the `::before` pseudo-element to improve text readability
+4. Removes the existing hero-image class (or you can comment it out)
+5. Ensures all content has proper z-index to appear above the background
+
+You can adjust the opacity of the overlay by changing the `0.85` value in `rgba(255, 255, 255, 0.85)` - lower for a more visible background image, higher for better text contrast.
+
+If you want a more subtle effect, you could also try:
+```css
+body {
+    /* ...other styles... */
+    background-image: url('musashi.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: var(--light-bg);
+    background-blend-mode: screen;
+    background-opacity: 0.15;
+}
+```
+
+This creates a more washed-out, gentle background effect without needing the overlay element.
