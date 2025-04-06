@@ -144,6 +144,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 ### Love
 ### Meditation
 ### Overthinking
-### Parents
+### Grit
+### Tenacity
 ### Strength
 ### Lack of motivation
