@@ -140,7 +140,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
    - Text areas for goal descriptions and importance reflection
 
 ### [Anger](https://mattwydra.github.io/self-help-hub/endpoints/anger/index.html)
-### Lost
+### [Lost](https://mattwydra.github.io/self-help-hub/endpoints/lost/index.html)
 ### Love
 ### Meditation
 ### Overthinking
