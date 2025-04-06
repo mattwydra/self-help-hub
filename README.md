@@ -143,7 +143,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 ### [Lost](https://mattwydra.github.io/self-help-hub/endpoints/lost/index.html)
 ### [Love](https://mattwydra.github.io/self-help-hub/endpoints/love/index.html)
 ### [Meditation](https://mattwydra.github.io/self-help-hub/endpoints/meditation/index.html)
-### Overthinking
+### [Overthinking](https://mattwydra.github.io/self-help-hub/endpoints/overthinking/index.html)
 ### Grit
 ### Tenacity
 ### Strength
