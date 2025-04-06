@@ -72,7 +72,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
 3. **Micro-Connection Challenge:**
    Suggest making one tiny human connection each day - smile at a cashier, comment on a social media post meaningfully, send a quick message to an old friend with no pressure for response. Frame it as building "connection muscle" gradually.
 
-### [Depression](https://mattwydra.github.io/self-help-hub/endpoints/depression/index.html)
+### [Depression](https://mattwydra.github.io/self-help-hub/endpoints/depressed/index.html)
 
 1. **Small Wins Tracker:**
    Create a visually rewarding digital tracker where users can log tiny wins each day. The interface should celebrate even minimal efforts (brushed teeth, opened curtains, drank water) with gentle positive reinforcement.
