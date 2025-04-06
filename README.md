@@ -139,7 +139,7 @@ Self-Help Hub is a personal self-care web application designed to provide emotio
    - Responsive design that works on various screen sizes
    - Text areas for goal descriptions and importance reflection
 
-### Anger
+### [Anger](https://mattwydra.github.io/self-help-hub/endpoints/anger/index.html)
 ### Lost
 ### Love
 ### Meditation
