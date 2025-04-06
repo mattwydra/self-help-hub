@@ -3,7 +3,7 @@ const topics = [
     "Egoism", "Strength", "Lost", "Overthinking", "Loneliness", "Regret", "Goal Setting",
     "Failure", "Social Anxiety", "Boredom", "Gratitude", "Revenge", "Anxiety", "Sleep",
     "Perseverance", "Tenacity"
-];
+]; // add parents endpoint
 
 const container = document.getElementById("buttonContainer");
 const radius = 400; // Radius for the circular layout
